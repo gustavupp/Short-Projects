@@ -9,12 +9,17 @@ function chess() {
     let givenWidth = document.querySelector('#getWidth').value;
     let givenHeight = document.querySelector('#getHeight').value; */
    
-    const myRow = document.createElement('tr');
-    const myColumn = document.createElement('td');
-    const elementParent = document.getElementById("chessboard");
-    elementParent.appendChild(myRow);
-    elementParent.appendChild(myColumn);
+    const tblBody = document.createElement('tbody');
+    const row = document.createElement('tr');
+    const cell = document.createElement('td');
 
+    const parentTable = document.getElementById('chessboard');
+    const parentRow = document.querySelector('tr');
+
+    row.appendChild(cell);
+    tblBody.appendChild(row);
+    parentTable.appendChild(tblBody);
+    
    /* let grid = [];
     for(let i = 0; i < givenHeight; i++) {
         for (j = 0; j < givenWidth; j++) {
