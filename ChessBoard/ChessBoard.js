@@ -1,38 +1,32 @@
-/* const p = document.getElementById('test');
-const row = document.querySelector('.row');
-const column = document.querySelector('.column');
+//const p = document.getElementById('test');
+//const row = document.querySelector('.row');
+//const column = document.querySelector('.column');
 const button = document.querySelector('#submit');
 
 button.addEventListener('click', chess);
 
 function chess() {
     let givenWidth = document.querySelector('#getWidth').value;
-    let givenHeight = document.querySelector('#getHeight').value; */
+    let givenHeight = document.querySelector('#getHeight').value;
    
-    const tblBody = document.createElement('tbody');
-    const row = document.createElement('tr');
-    const cell = document.createElement('td');
+    var tblBody = document.createElement('tbody');
+    var parentTable = document.getElementById('chessboard');
 
-    const parentTable = document.getElementById('chessboard');
-    const parentRow = document.querySelector('tr');
-
-    row.appendChild(cell);
-    tblBody.appendChild(row);
-    parentTable.appendChild(tblBody);
-    
-   /* let grid = [];
     for(let i = 0; i < givenHeight; i++) {
         for (j = 0; j < givenWidth; j++) {
             if ((j % 2 === 0 && i % 2 === 0) || (j % 2 !== 0 && i % 2 !== 0)) {
-                grid += "#";
+                var cell = document.createElement('td');
             } else {
-                grid += "C";
+                var cell = document.createElement('td');
             }
         }
-        grid += "<br>";
+        var row = document.createElement('tr');
+        row.appendChild(cell);
+        var parentRow = document.querySelector('tr');
+        tblBody.appendChild(row);
     }
-    document.getElementById('test').innerHTML = grid;
-}; */
+    parentTable.appendChild(tblBody);  
+};
 
 /*  ----------Original Function--------------
 function chess(w, h) {
