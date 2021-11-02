@@ -3,9 +3,9 @@ const button = document.querySelector('#submit');
 button.addEventListener('click', chess);
 
 function chess() {
-    let resetTd = document.querySelectorAll('td');
-    let resetTr = document.querySelectorAll('tr');
-    let resetTbody = document.querySelectorAll('tBody');
+    //let resetTd = document.querySelectorAll('td');
+    //let resetTr = document.querySelectorAll('tr');
+    //let resetTbody = document.querySelectorAll('tBody');
     //resetTd.remove();
     //resetTr.remove();
     //resetTbody.remove();
