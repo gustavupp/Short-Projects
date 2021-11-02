@@ -1,0 +1,41 @@
+* {
+    margin: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-family: helvetica ,sans-serif;
+    text-align: center;
+}
+
+body {
+    background-color: rgba(211, 211, 211, 0.295);
+}
+
+.underline {
+    width: 100px;
+    height: 1px;
+    background-color: steelblue;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.card-container {
+   
+    width: 380px;
+    margin: auto;
+    background-color: white;
+    box-shadow: 1px 1px 12px rgba(66, 66, 66, 0.199);
+    border-radius: 8px;
+}
+
+img {
+    width: 100px;
+}
+
+p {
+    font-size: 14px;
+}
+
+.prev-button, .next-button {
+    border-style: none;
+    background-color: white;
+}
