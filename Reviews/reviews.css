@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: rgba(211, 211, 211, 0.295);
+    background-color: rgba(235, 233, 233, 0.171);
 }
 
 .underline {
@@ -35,7 +35,24 @@ p {
     font-size: 14px;
 }
 
+.random-button {
+    border: solid;
+    border-radius: 7px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.582);
+}
+
+.button-container {
+    padding: 0;
+    margin: -10px 0px -10px 0px;
+}
+
 .prev-button, .next-button {
     border-style: none;
     background-color: white;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0;
 }
