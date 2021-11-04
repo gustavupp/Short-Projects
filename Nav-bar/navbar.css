@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* -----starts nav bar style -------*/
+
+.nav-header {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 10px 5%;
+    box-shadow: 1px 1px 10px rgba(211, 211, 211, 0.808);
+}
+/* hidden toggle menu */
+.nav-toggle {
+    background-color: transparent;
+    border-style: none;
+    font-size: 24px;
+    cursor: pointer;
+    float: right;
+    display: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+li {
+    display: inline-block;    
+}
+
+li a {
+    color: rgb(41, 41, 41);
+    text-decoration: none;
+    cursor: pointer;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    border-radius: 20px;
+}
+
+.links a:hover {
+    background-color: #FFDE59;
+    color: white;
+}
+
+.links a.active {
+    background-color: #FFDE59;
+    color: white;
+}
+
+.social {
+    float: right;
+}
+
+.social a {
+    color: rgba(0, 0, 0, 0.753);
+    cursor: pointer;
+    padding: 8px 5px;
+}
+
+.social a:hover {
+    color: #FFDE59;
+}
+
+.links a:active {
+    background-color: blue;
+}
+
+.logo {
+    width: 180px;
+    height: auto;
+    padding: 6px;
+}
+
+i {
+    font-size: 24px;
+}
+
+/* hidden mobile menu */
+.links-mobile {
+    display: none;
+}
+
+/* ------------------Responsive Layout - TABLET------------------ */
+
+@media screen and (max-width: 992px) {
+    .social {
+        display: none;
+    }
+}
+
+/* ------------------Responsive Layout - SMARTPHONE------------------ */
+
+@media screen and (max-width: 640px) {
+    .social {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    ul.social {
+        display: none;
+    }
+
+    .links-div {
+        display: none;
+    }
+
+    .links-mobile {
+        display: none;
+        float: right;
+        margin: 8px 0px 20px 10px;
+        padding: 15px 15px;
+        background-color: white;
+        box-shadow: 0px 2px 5px rgba(54, 54, 54, 0.308);
+    }
+
+    li {
+        display: block;
+    }
+    .links-mobile a:hover {
+        background-color: #FFDE59;
+        color: white;
+    }
+}
