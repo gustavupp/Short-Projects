@@ -15,7 +15,7 @@
     box-shadow: 1px 1px 10px rgba(211, 211, 211, 0.808);
 }
 /* hidden toggle menu */
-.nav-toggle {
+.nav-toggle1, .nav-toggle2 {
     background-color: transparent;
     border-style: none;
     font-size: 24px;
@@ -71,10 +71,6 @@ li a {
     color: #FFDE59;
 }
 
-.links a:active {
-    background-color: blue;
-}
-
 .logo {
     width: 180px;
     height: auto;
@@ -105,7 +101,7 @@ i {
         display: none;
     }
 
-    .nav-toggle {
+    .nav-toggle1 {
         display: block;
     }
 
