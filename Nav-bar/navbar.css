@@ -92,6 +92,10 @@ i {
     .social {
         display: none;
     }
+    .links-mobile {
+        display: none;
+    }
+
 }
 
 /* ------------------Responsive Layout - SMARTPHONE------------------ */
