@@ -109,6 +109,11 @@ i {
         display: block;
     }
 
+    .nav-toggle1:hover {
+        transform: rotate(90deg);
+        transition: 0.4s;
+    }
+
     ul.social {
         display: none;
     }
