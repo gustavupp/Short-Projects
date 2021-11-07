@@ -13,11 +13,13 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: rgba(238, 237, 237, 0.692);
+    background-image: linear-gradient(to right top, #92fae7, #6cdbeb);
 }
 
 .title {
     margin-bottom: 25px;
+    color: #1b363a;
+    font-size: 20px;
 }
 
 .individual-questions {
@@ -26,8 +28,8 @@
     border-radius: 7px;
     width: 700px;
     margin: 15px 10px;
-    background-color: white;
-    box-shadow: 1px 1px 12px rgba(156, 155, 155, 0.527);
+    background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.3));
+    box-shadow: 1px 1px 10px rgba(180, 179, 179, 0.3);
     transition: 0.2s;
 }
 
@@ -55,11 +57,12 @@
     border-style: none;
     cursor: pointer;
     font-size: 18px;
+    color: #274c52
 }
 
 .open-btn:hover, .close-btn:hover {
     transform: scale(1.1);
-    color: rgb(102, 92, 238);
+    color: #5a9c8f;
 }
 
 hr {
