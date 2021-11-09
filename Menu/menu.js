@@ -81,7 +81,6 @@ const menu = [
 },
 ];
 
-
 const gridContainer = document.querySelector('.grid-container');
 const buttonContainer = document.querySelector('.button-container');
 
