@@ -2,7 +2,7 @@
     --DarkGray: #27353E;
     --white: #ececec;
     --gray: rgb(196, 194, 194);
-    --lightRed: #965535b9;
+    --lightRed: #b4663fb7;
   }
 
 * {
@@ -37,7 +37,8 @@ hr {
     grid-template-columns: 1fr;
     grid-gap: 15px;
     justify-items: center;
-   margin: 10px;
+    align-items: center;
+    margin: 10px;
 }
 
 .button-container {
@@ -51,7 +52,7 @@ hr {
     margin: 7px 2px;
     background-color: transparent;
     color: var(--white);
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
     transition: 0.2s;
 }
@@ -110,7 +111,9 @@ hr {
     .thumbnails {
         width: 14rem;
     }
-
+    .filter-button {
+        font-size: 14px;
+    }
 }
 
 /*--------------------BIGGER SCREEN--------------------*/
