@@ -1,6 +1,4 @@
 
-palindrome('   &han^n ah ');
-
 function palindrome(str) {
     const string = str;
 
@@ -10,7 +8,7 @@ function palindrome(str) {
     console.log(noAlphaCaracters);
 
     const turnIntoArray = noAlphaCaracters.split(""); //turn into array
-
+    
     //this extra loop wasnt planned.. but the cleaning of the string left undefined data on the array therefore array.length wasn't working.. that is the fix for array.length...it counts only non-undefined values.
     var len = 0;
     for (let i = 0; i < turnIntoArray.length; i++) {
@@ -20,7 +18,7 @@ function palindrome(str) {
     }
     //console.log(len);
 
-    //create new array in reverse order
+    //create new array in reverse order....realized later that I could've used the .reverse() method ahhaha
     let reverseArr = [];
     for (let i = 0; i < len; i++) {
         reverseArr += turnIntoArray.pop();
@@ -37,3 +35,5 @@ function palindrome(str) {
         return false;
     }   
 } 
+
+console.log(palindrome('   GUS&^ta   '));
