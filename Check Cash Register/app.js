@@ -47,10 +47,14 @@ function checkCashRegister(price, cash, cid) {
             }
 
            console.log(finalChange);
-           let newFinalChange = finalChange[0];
+           let newFinalChange = [];
+           newFinalChange[0] = finalChange[0];
            console.log(newFinalChange);
            for (let i = 1; i < finalChange.length; i++) {
-                if (finalChange[i][0] === newFinalChange[i-1][0]) newFinalChange[i-1][1] * 2;
+                if (finalChange[i][0] == newFinalChange[i-1][0]) {
+                    newFinalChange[i-1][1] * 2;
+                    console.log(newFinalChange[i-1]);
+                }
            }
     }    
     //return finalChange;
