@@ -2,10 +2,8 @@ function checkCashRegister(price, cash, cid) {
  
     let changeDue = cash - price;
     changeDue = changeDue.toFixed(2); 
-    let changeSum = changeDue;
     console.log(changeDue);
     let cidTotal = 0;
-    cid.reverse();
 
     const myObj = [
         {status: "INSUFFICIENT_FUNDS", change: []},
@@ -25,21 +23,25 @@ function checkCashRegister(price, cash, cid) {
     if (changeDue === cidTotal) return myObj[1];
     if (changeDue < cidTotal) {
 
+        let changeSum = changeDue;
+
         for (let i = 0; i < CURRENCY_UNIT.length; i++) {
             if (CURRENCY_UNIT[i][1] < changeSum){
                 for (let j = i; j < cid.length; j++) {
-                    if (cid[j][1] === changeSum) {
-                        myObj[2].change.push(cid[j]);
-                        return myObj[2];
-                    } else if (cid[j][1] < changeSum) {
-                        myObj[2].change.push(cid[j]);
-                        changeSum -= cid[j][1];
-                    } else {
-                        if (cid.indexOf(cid[j]) === 3) {
-                            //keep from here
-                        }
-                    }
+
                 }
+                //changeSum -= CURRENCY_UNIT[i][1];
+                //myObj[2].change.push(CURRENCY_UNIT[i]);
+                
+                    if (CURRENCY_UNIT[i][1] === changeSum) {
+                        changeSum -= CURRENCY_UNIT[i][1];
+                        myObj[2].change.push(CURRENCY_UNIT[i]);
+                        return myObj[2];
+                    }
+                    i--;
+
+            } else if (CURRENCY_UNIT[i][1] === changeSum) {
+                return myObj[2];
             }
         } 
     }
