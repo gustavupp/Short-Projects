@@ -31,13 +31,11 @@ function checkCashRegister(price, cash, cid) {
 
             let changeSum = changeDue;
 
-
             for (let i = 0; i < CURRENCY_UNIT.length; i++) {
                 if (CURRENCY_UNIT[i][1] < changeSum){
                     changeSum -= CURRENCY_UNIT[i][1];
                     finalChange.push(CURRENCY_UNIT[i]);
                     i--;
-                    console.log(changeSum);
                         if (CURRENCY_UNIT[i][1] === changeSum) {
                             changeSum -= CURRENCY_UNIT[i][1];
                             finalChange.push(CURRENCY_UNIT[i]);
@@ -46,11 +44,15 @@ function checkCashRegister(price, cash, cid) {
                 } else if (CURRENCY_UNIT[i][1] === changeSum) {
                     return `{status: ${myObj.status[2]}, change: ${CURRENCY_UNIT[i][1]}}`;
                 }
-                console.log(changeSum);
             }
-            console.log(changeSum);
-            console.log(finalChange);
-        }    
+
+           console.log(finalChange);
+           let newFinalChange = finalChange[0];
+           console.log(newFinalChange);
+           for (let i = 1; i < finalChange.length; i++) {
+                if (finalChange[i][0] === newFinalChange[i-1][0]) newFinalChange[i-1][1] * 2;
+           }
+    }    
     //return finalChange;
 }
 
