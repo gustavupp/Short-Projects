@@ -39,71 +39,16 @@ function checkCashRegister(price, cash, cid) {
                         if (changeSum === 0) return myObj[2];
 
                     } else {
-
                         while (j < cid.length) {
-                            if (j === 0 && changeSum >= 10000 && cid[j][1] >= 10000) { 
-                                moneyTaken = 10000 * (Math.floor(changeSum / 10000));
+                            if (changeSum >= CURRENCY_UNIT[j][1] && cid[j][1] * 100 >= CURRENCY_UNIT[j][1] && cid[j][1] * 100 >= changeSum) {
+                                console.log(CURRENCY_UNIT[j][1]);
+                                moneyTaken = CURRENCY_UNIT[j][1] * (Math.floor(changeSum / CURRENCY_UNIT[j][1]));
                                 cid[j][1] = moneyTaken / 100;
                                 myObj[2].change.push(cid[j]);
                                 changeSum -= moneyTaken;
+
                                     if (changeSum == 0) return myObj[2];
-                                
-                            } else if (j === 1 && changeSum >= 2000 && cid[j][1] >= 2000) { 
-                                moneyTaken = 2000 * (Math.floor(changeSum / 2000));
-                                cid[j][1] = moneyTaken / 100;
-                                myObj[2].change.push(cid[j]);
-                                changeSum -= moneyTaken;
-                                    if (changeSum == 0) return myObj[2];
-                                    
-                            } else if (j === 2 && changeSum >= 1000 && cid[j][1] >= 1000) { 
-                                moneyTaken = 1000 * (Math.floor(changeSum / 1000));
-                                cid[j][1] = moneyTaken / 100;
-                                myObj[2].change.push(cid[j]);
-                                changeSum -= moneyTaken;
-                                    if (changeSum == 0) return myObj[2];
-                                    
-                            } else if (j === 3 && changeSum >= 500 && cid[j][1] * 100 >= 500) { 
-                                moneyTaken = 500 * (Math.floor(changeSum / 500));
-                                cid[j][1] = moneyTaken / 100;
-                                myObj[2].change.push(cid[j]);
-                                changeSum -= moneyTaken;
-                                    if (changeSum == 0) return myObj[2];
-                                    
-                            } else if (j === 4 && changeSum >= 100 && cid[j][1] * 100 >= 100) { 
-                                moneyTaken = 100 * (Math.floor(changeSum / 100));
-                                cid[j][1] = moneyTaken / 100;
-                                myObj[2].change.push(cid[j]);
-                                changeSum -= moneyTaken;
-                                    if (changeSum == 0) return myObj[2];
-                                
-                            } else if (j === 5 && changeSum >= 25 && cid[j][1] * 100 >= 25) { 
-                                moneyTaken = 25 * (Math.floor(changeSum / 25));
-                                cid[j][1] = moneyTaken / 100;
-                                myObj[2].change.push(cid[j]);
-                                changeSum -= moneyTaken;
-                                    if (changeSum == 0) return myObj[2];
-                                
-                            } else if (j === 6 && changeSum >= 10 && cid[j][1] * 100 >= 10) { 
-                                moneyTaken = 10 * (Math.floor(changeSum / 10));
-                                cid[j][1] = moneyTaken / 100;
-                                myObj[2].change.push(cid[j]);
-                                changeSum -= moneyTaken;
-                                    if (changeSum == 0) return myObj[2];
-                                
-                            } else if (j === 7 && changeSum >= 5 && cid[j][1] * 100 >= 5) { 
-                                moneyTaken = 5 * (Math.floor(changeSum / 5));
-                                cid[j][1] = moneyTaken / 100;
-                                myObj[2].change.push(cid[j]);
-                                changeSum -= moneyTaken;
-                                    if (changeSum == 0) return myObj[2];
-                                
-                            } else if (j === 8 && (changeSum >= 1) && cid[j][1] * 100 >= changeSum) {
-                                moneyTaken = 1 * (Math.floor(changeSum / 1)); 
-                                cid[j][1] = moneyTaken / 100;
-                                myObj[2].change.push(cid[j]);
-                                changeSum -= moneyTaken;
-                                    if (changeSum == 0) return myObj[2];
-                            } 
+                                }
                             j++
                         }
                         return myObj[0];
@@ -115,4 +60,4 @@ function checkCashRegister(price, cash, cid) {
     return myObj[2];
 }
 
-console.log(checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));
+console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));
