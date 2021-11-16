@@ -64,7 +64,7 @@ h1 {
 }
 
 .modal {
-    position: relative; /* set to relative so I can place .close-btn where I want inside .modal */
+    position: relative; /* set to relative so I can place .close-btn in a fixed position within this container */
     border-style: solid;
     height: 80vh;
     width: 60vw;

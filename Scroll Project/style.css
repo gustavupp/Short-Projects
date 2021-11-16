@@ -30,13 +30,18 @@ header {
 }
 
 .links-container {
-    display: none; /*toggles from none to block*/
     padding: 15px;
     background-color: var(--white);
+    display: none; 
+}
+
+.show-nav {
+    display: block; /*toggles from none to block*/
 }
 
 .logo {
-    width: 150px;
+    width: 40px;
+    margin-left: 15px;
 }
 
 .nav-toggle {
@@ -44,6 +49,11 @@ header {
     border: none;
     font-size: 26px;
     cursor: pointer;
+}
+
+.nav-toggle:hover {
+    transform: rotate(90deg);
+    transition: 0.3s;
 }
 
 ul {
@@ -68,4 +78,18 @@ li a {
     text-align: center;
 }
 
+.explore-menu {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    cursor: pointer;
+    border-style: solid;
+    padding: 5px 10px;
+}
+
+.explore-menu:hover {
+    background-color: var(--white);
+    color: var(--Darkblue);
+    border-color: transparent;
+}
 /*-------ENDS HEADER-------*/
