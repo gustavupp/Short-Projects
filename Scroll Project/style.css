@@ -1,6 +1,9 @@
 :root {
     --Darkblue: #27353E;
+    --lessDarkBlue: #343A4A;
+    --LightBlue: #697799;
     --white: #ffffff;
+    --red: #b47d6c;
   }
 
 * {
@@ -74,7 +77,7 @@ li a {
 }
 
 .container {
-    color: white;
+    color: var(--white);
     text-align: center;
 }
 
@@ -93,3 +96,15 @@ li a {
     border-color: transparent;
 }
 /*-------ENDS HEADER-------*/
+/*-------BEGINS ABOUT-------*/
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+span {
+    color: var(--red);
+}
+
+/*-------ENDS ABOUT-------*/
