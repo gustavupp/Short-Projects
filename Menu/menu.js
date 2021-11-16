@@ -113,7 +113,7 @@ function displayMenuItems(menuItems) {
 
 function displayCategoryItems() {
     //load buttons according to obj's categories
-    const categories = menu.reduce( function(acumulator, current) {
+    const categories = menu.reduce(function(acumulator, current) {
         if (!acumulator.includes(current.category)) {
             acumulator.push(current.category);
         }

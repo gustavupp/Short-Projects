@@ -8,7 +8,7 @@ function rot13(str) {
     for (let i = 0; i < str.length; i++) {
         if (str[i].match(/[A-Z|a-z]/ig)) { //check if value is a letter
             result += parseInt(arr.indexOf(str[i])) - 13; //had to use parseInt to be able to subtract
-            if (result <= 0) { //if 0 or negative by adding 26(number of alphabet letters) you take the value back to the matching index
+            if (result <= 0) { //if 0 or negative by adding 26(number of all alphabet letters) you take the value back to the matching index
                 result += 26;
             }
             newResult[i] = result;  //assigns value of result to a different variable
