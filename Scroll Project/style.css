@@ -40,14 +40,19 @@ header {
 }
 
 .links-container {
-    padding: 15px;
-    background-color: var(--white);
-    display: none; 
+    background-color: var(--white); 
+    height: 0;
+    overflow: hidden;
+    transition: 0.3s;
 }
 
-.show-nav {
-    display: block; /*toggles from none to block*/
+.links-list {
+    padding: 15px;
 }
+
+/* .show-nav {
+    height: 110px; toggles from hight 0 to 110px
+} */
 
 .logo {
     width: 40px;
@@ -110,17 +115,26 @@ span {
 }
 
 /*-----------FOOTER-----------*/
+.footer-div {
+    position: relative;
+}
+
 .footer {
     background-color: var(--lessDarkBlue);
+    height: 100px;
+    font-size: 14px;
+    color: var(--white);
+    text-align: center;
+    padding: 25px 10px;
 }
 
 /*----------BACK TO TOP BUTTON----------*/
-.scroll-link {
-    position: fixed;
-    bottom: 20px;
+.scroll-link-btn {
+    position: absolute;
+    bottom: 15px;
     right: 20px;
     color: var(--white);
-    background-color: rgb(117, 179, 98);
+    background-color: rgb(52, 177, 94);
     padding: 5px 10px;
     border-radius: 7px;
     font-size: 16px;
