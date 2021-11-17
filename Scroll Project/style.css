@@ -13,6 +13,13 @@
     font-family: 'Poppins', sans-serif;
 }
 
+section {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
 /*-------BEGINS HEADER--------*/
 header {
     height: 100vh;
@@ -94,17 +101,27 @@ li a {
     background-color: var(--white);
     color: var(--Darkblue);
     border-color: transparent;
+    font-weight: 600;
 }
-/*-------ENDS HEADER-------*/
 /*-------BEGINS ABOUT-------*/
-
-section {
-    display: flex;
-    justify-content: center;
-}
 
 span {
     color: var(--red);
 }
 
-/*-------ENDS ABOUT-------*/
+/*-----------FOOTER-----------*/
+.footer {
+    background-color: var(--lessDarkBlue);
+}
+
+/*----------BACK TO TOP BUTTON----------*/
+.scroll-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: var(--white);
+    background-color: rgb(117, 179, 98);
+    padding: 5px 10px;
+    border-radius: 7px;
+    font-size: 16px;
+}
