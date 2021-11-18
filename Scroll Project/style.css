@@ -29,19 +29,20 @@ header {
 
 .nav-center {
     width: 100vw;
-    box-shadow: 1px 1px 10px rgba(197, 197, 197, 0.808);
+
+    background-color: var(--white);
 }
 
 .nav-header {
     display: flex;
     justify-content:space-between;
     padding: 10px;
-    background-color: var(--white);
+    
 }
 
 .links-container {
     background-color: var(--white); 
-    height: 0;
+   height: 0;
     overflow: hidden;
     transition: 0.3s;
 }
@@ -50,9 +51,9 @@ header {
     padding: 15px;
 }
 
-/* .show-nav {
-    height: 110px; toggles from hight 0 to 110px
-} */
+.links-list a:hover {
+    color: var(--LightBlue);
+}
 
 .logo {
     width: 40px;
@@ -64,11 +65,13 @@ header {
     border: none;
     font-size: 26px;
     cursor: pointer;
+    margin-right: 16px;
 }
 
 .nav-toggle:hover {
     transform: rotate(90deg);
     transition: 0.3s;
+    color: var(--LightBlue);
 }
 
 ul {
@@ -108,16 +111,13 @@ li a {
     border-color: transparent;
     font-weight: 600;
 }
-/*-------BEGINS ABOUT-------*/
+/*------- ABOUT-------*/
 
 span {
     color: var(--red);
 }
 
 /*-----------FOOTER-----------*/
-.footer-div {
-    position: relative;
-}
 
 .footer {
     background-color: var(--lessDarkBlue);
@@ -130,7 +130,7 @@ span {
 
 /*----------BACK TO TOP BUTTON----------*/
 .scroll-link-btn {
-    position: absolute;
+    position: fixed;
     bottom: 15px;
     right: 20px;
     color: var(--white);
@@ -139,3 +139,58 @@ span {
     border-radius: 7px;
     font-size: 16px;
 }
+
+.scroll-link-btn:hover {
+    scale: 1.1;
+    transition: 0.2s;
+}
+
+/*************MEDIUM SCREEN************/
+@media screen and (min-width: 800px) {
+    .nav-center {
+        display: flex;
+        background-color: transparent;
+        justify-content:space-between;
+        padding: 0 70px;
+    }
+    
+    .links-container {
+        height: auto;
+        background-color: transparent;
+        overflow: visible;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+    
+    .links-list li {
+        display: inline-block;
+        padding: 0 12px;
+    }
+
+    .links-list li a {
+        color: var(--white);
+    }
+
+    .container {
+        width: 700px;
+    }
+
+    /******FIXED NAVBAR*****/
+    .fixed-navbar {
+        position: fixed;
+        top: 0;
+        background-color: var(--white);
+        box-shadow: 1px 1px 8px rgba(184, 182, 182, 0.493);
+    }
+
+    .fixed-navbar .links-list li a {
+        color: var(--Darkblue);
+    }
+
+    .fixed-navbar .links-list a:hover {
+        color: var(--LightBlue);
+    }
+}
+

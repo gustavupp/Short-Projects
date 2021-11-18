@@ -1,7 +1,7 @@
 // dynamically display date
 const date = document.getElementById("date").innerHTML = new Date().getFullYear();
 
-//open menu
+//open  and close menu
 const toggleBtn = document.querySelector(".nav-toggle");
 const navDiv = document.querySelector(".links-container");
 const navLinksList = document.querySelector(".links-list");
@@ -11,11 +11,19 @@ toggleBtn.addEventListener("click", function() {
 
    const navDivHeight = navDiv.getBoundingClientRect().height;
    const navLinksListHeight = navLinksList.getBoundingClientRect().height;
-    console.log(navDivHeight);
-    console.log(navLinksListHeight);
+
    if (navDivHeight === 0) {
     navDiv.style.height = `${navLinksListHeight}px`;
    } else {
        navDiv.style.height = 0;
    } 
+});
+
+//fixed navbar when scrolled past x pixels
+const navCenter = document.querySelector(".nav-center");
+const navCenterHeight = navCenter.getBoundingClientRect().height;
+
+window.addEventListener("scroll", () => {
+    if (window.pageYOffset > navCenterHeight) navCenter.classList.add("fixed-navbar");
+    else navCenter.classList.remove("fixed-navbar");
 });
