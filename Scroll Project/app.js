@@ -44,8 +44,11 @@ scrollLinks.forEach(function (link) {
         //navigates to a specific spot on the page
         const id = e.currentTarget.getAttribute("href").slice(1);
         const element = document.getElementById(id);
-        let position = element.offsetTop;
-        window.scrollTo({left: 0, top: position - 59});
+
+        //calculate the heights
+        const navHeaderHeight = document.querySelector(".nav-header").getBoundingClientRect().height;
+        let position = element.offsetTop - navHeaderHeight;
+        window.scrollTo({left: 0, top: position});
         navDiv.style.height = 0;
     });
 });
