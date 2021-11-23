@@ -24,6 +24,7 @@ const weekdays = [
     "Saturday"
 ];
 
+
 //setup each date compoment
 const giveaway = document.querySelector(".giveaway");
 const deadline = document.querySelector(".deadline");
@@ -37,8 +38,10 @@ let tempDate = new Date();
 let tempYear = tempDate.getFullYear();
 let tempMonth = tempDate.getMonth();
 let tempDay = tempDate.getDate();
+let tempHour = tempDate.getHours();
+let tempMinute = tempDate.getMinutes();
 
-let futureDate = new Date(tempYear, tempMonth, tempDay + 10);
+let futureDate = new Date(tempYear, tempMonth, tempDay + 10, tempHour, tempMinute);
 
 //select individual values
 const year = futureDate.getFullYear();
@@ -48,8 +51,16 @@ const day = futureDate.getDate();
 const hour = futureDate.getHours();
 const minute = futureDate.getMinutes();
 
+//add an extra zero if item is a single digit
+function format(item) {
+    if (item < 10){
+        return (item = `0${item}`);
+    }
+    return item;
+}
+
 //write on the appropriate DOM node.
-giveaway.textContent = `Giveaway Ends on ${weekday}, ${month} ${day}th ${year}, ${hour}:${minute}`;
+giveaway.textContent = `Giveaway Ends on ${weekday}, ${day} ${month} ${year}, ${hour}:${format(minute)}`;
 
 //get the future date we defined and turn it into miliseconds
 const futureTime = futureDate.getTime();
@@ -73,14 +84,6 @@ function getRemainingTime(){
 
     //create an array with the values in the right order 
     const values = [days, hours, minutes, seconds];
-
-    //add an extra zero if item is a single digit
-    function format(item) {
-        if (item < 10){
-            return (item = `0${item}`);
-        }
-        return item;
-    }
 
     //loop through the items and assign the current index to each item
     items.forEach((item, index) => {
