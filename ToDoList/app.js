@@ -38,6 +38,14 @@ function addTodoItem(e){
             </button>
         </div>`;
 
+        //THIS IS FOR THE DELETE AND EDIT BUTTON
+        //select and add event listeners to buttons after they have been added to the DOM
+        const DELETE_BTN = NEW_INDIVIDUAL_ITEM.querySelector(".delete-btn");
+        const EDIT_BTN = NEW_INDIVIDUAL_ITEM.querySelector(".edit-btn");
+        DELETE_BTN.addEventListener("click", deleTodoItem);
+        EDIT_BTN.addEventListener("click", editTodoItem);
+
+        //apend item to its parent
         TODO_ITEMS.appendChild(NEW_INDIVIDUAL_ITEM);
 
         //add to local storage
@@ -81,8 +89,25 @@ function clearAll(){
             TODO_ITEMS.removeChild(item);
         });
     }
+    CLEAR_BTN.classList.remove("show-container");
+    displayAlert(ALERT, "List Cleared!", "red");
+    //localStorage.removeItem("ALL_ITEMS");
+    setBackToDefault();
 }
 
+//delete item
+function deleTodoItem(e){
+    const element = e.currentTarget.parentElement.parentElement;
+    TODO_ITEMS.removeChild(element);
+    if (TODO_ITEMS.children.length === 0){
+        CLEAR_BTN.classList.remove("show-container");
+    }
+}
+
+//edit item
+function editTodoItem(){
+    console.log("edit item")
+}
 
 //*********LOCAL STORAGE********
 //add to local storage
