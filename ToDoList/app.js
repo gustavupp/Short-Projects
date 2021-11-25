@@ -11,6 +11,11 @@ const CLEAR_BTN = document.querySelector(".clear-btn");
 TODO_FORM.addEventListener("submit", addTodoItem);
 CLEAR_BTN.addEventListener("click", clearAll);
 
+//DEFAULT SETTINGS
+let editMode = false;
+let editElement;
+let editID = "";
+
 //*********FUNCTIONS************
 //add items to the list
 function addTodoItem(e){
@@ -19,7 +24,7 @@ function addTodoItem(e){
     const INPUT_VALUE_ID = new Date().getTime().toString(); //quick setup to create unique ID's
     
     //check the value passed through the form
-    if (INPUT_VALUE) {
+    if (INPUT_VALUE && !editMode) {
         const NEW_INDIVIDUAL_ITEM = document.createElement("article"); //create an article
         NEW_INDIVIDUAL_ITEM.classList.add("individual-item"); //added the CSS styling to the new item
         const ATTRIBUTE = document.createAttribute("data-id"); //create a dataset atribute
@@ -51,16 +56,22 @@ function addTodoItem(e){
         //add to local storage
         addToLocalStorage(INPUT_VALUE_ID, INPUT_VALUE);
 
-        //setback to default
-        setBackToDefault();
-
         NEW_INDIVIDUAL_ITEM.classList.add("show-container");
         CLEAR_BTN.classList.add("show-container");
 
         displayAlert(ALERT, "Item Added To The List", "green"); 
+        setBackToDefault(); //setback to default
+
+    } else if (INPUT_VALUE && editMode) {
+        editElement.innerHTML = INPUT_TEXT.value; //assign input new value to the element you are editing
+        editLocalStorage(editID); //update local storage
+        SUBMIT_BTN.innerHTML = "Submit"; //change submit button innerHTML back to Submit
+        displayAlert(ALERT, "Item Updated", "green");
+        setBackToDefault(); //setback to default
     } else {
         displayAlert(ALERT, "Empty Value", "red");
     }
+    setBackToDefault(); //setback to default
 }
 
 //display alert function. I added a node element as a parameter so we can resuse the function more broadly
@@ -77,7 +88,9 @@ function displayAlert(node, text, alertColor){
 //setback to default
 function setBackToDefault(){
     INPUT_TEXT.value = "";
-    console.log("set back to default");
+    editMode = false;
+    editID = "";
+    SUBMIT_BTN.innerHTML = "Submit";
 }
 
 //clear all items
@@ -97,16 +110,28 @@ function clearAll(){
 
 //delete item
 function deleTodoItem(e){
-    const element = e.currentTarget.parentElement.parentElement;
-    TODO_ITEMS.removeChild(element);
-    if (TODO_ITEMS.children.length === 0){
-        CLEAR_BTN.classList.remove("show-container");
-    }
+    //grab the target button's parent parent
+    const ITEM = e.currentTarget.parentElement.parentElement;
+    const ITEM_ID = ITEM.dataset.id; //grab its id so we can delete it later from local storage
+
+    TODO_ITEMS.removeChild(ITEM); //target the parent container and remove the child item
+
+    //if there is nothin else in the list, remove clear button as well
+    if (TODO_ITEMS.children.length === 0) CLEAR_BTN.classList.remove("show-container");
+     
+    displayAlert(ALERT, "Item Removed", "red");
+    removeFromLocalStorage(ITEM_ID); //remove from local storage
+    setBackToDefault();
 }
 
 //edit item
-function editTodoItem(){
-    console.log("edit item")
+function editTodoItem(e){
+    const EDIT_ELEMENT = e.currentTarget.parentElement.previousElementSibling; //grab the value of the item you are editing
+    INPUT_TEXT.value = EDIT_ELEMENT.innerHTML; //assign the value to the input field
+    SUBMIT_BTN.innerHTML = "Save"; //change submit button innerHTML to EDIT
+    editMode = true;
+    editID = e.currentTarget.parentElement.parentElement.dataset.id;
+    editElement = EDIT_ELEMENT;
 }
 
 //*********LOCAL STORAGE********
@@ -115,4 +140,13 @@ function addToLocalStorage(id, value){
     console.log("item added to local storage");
 };
 
+//remove from local storage
+function removeFromLocalStorage(id){
+    console.log("removed from local storage");
+}
+
+//update local storage
+function editLocalStorage(id){
+    console.log("local storage updated");
+}
 //*********SETUP ITEMS***********
