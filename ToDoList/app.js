@@ -1,3 +1,4 @@
+
 //********SELECT ITEMS***********
 const ALERT = document.querySelector(".alert");
 const TODO_FORM = document.querySelector(".todo-form");
@@ -172,9 +173,6 @@ function displayCurrentList(){
         CLEAR_BTN.classList.add("show-container");
         return NEW_INDIVIDUAL_ITEM; 
     });
-
-
-    
 }
 
 //*********LOCAL STORAGE********
@@ -217,18 +215,3 @@ function getLocalStorage(){
     return localStorage.getItem("localStorageList")? JSON.parse(localStorage.getItem("localStorageList")) : [];
 }
 
-//local storage API
-//setItem
-//getItem
-//removeItem
-//save as strings
-
-/*localStorage.setItem("testKey",JSON.stringify(["item1", "item2"]));
-
-let vari = JSON.parse(localStorage.getItem("testKey"));
-
-localStorage.removeItem("testKey");
-
-console.log(vari);*/
-
-//*********SETUP ITEMS***********
