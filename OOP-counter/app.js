@@ -1,43 +1,38 @@
-function Counter(element, value) {
+function Counter(element, value){
     this.counter = element;
     this.value = value;
-    this.resetBtn = element.querySelector(".reset");
+    this.DOMvalue = element.querySelector(".value");
+    this.DOMvalue.textContent = this.value;
     this.increaseBtn = element.querySelector(".increase");
     this.decreaseBtn = element.querySelector(".decrease");
-    this.valueDOM = element.querySelector(".value");
-    this.valueDOM.textContent = this.value; 
-    this.increase = this.increase.bind(this);
-    this.decrease = this.decrease.bind(this);
+    this.resetBtn = element.querySelector(".reset");
+    this.add = function(){
+        this.value++;
+        this.DOMvalue.textContent = this.value;
+    }
+    this.subtract = this.subtract.bind(this);
     this.reset = this.reset.bind(this);
-    this.increaseBtn.addEventListener("click", this.increase);
-    this.decreaseBtn.addEventListener("click", this.decrease);
+    this.increaseBtn.addEventListener("click", this.add.bind(this));
+    this.decreaseBtn.addEventListener("click", this.subtract);
     this.resetBtn.addEventListener("click", this.reset);
+
+    console.log(this)
 }
 
-Counter.prototype.increase = function (){
-    this.value++;
-    this.valueDOM.textContent = this.value;
-}
-
-Counter.prototype.decrease = function(){
-    this.value--;
-    this.valueDOM.textContent = this.value;
+Counter.prototype.subtract = function(){
+    this.value--
+    this.DOMvalue.textContent = this.value;
 }
 
 Counter.prototype.reset = function(){
     this.value = 0;
-    this.valueDOM.textContent = 0;
+    this.DOMvalue.textContent = this.value;
 }
 
-const firstCounter = new Counter(getElement(".first-counter"), 150);
-const secondCounter = new Counter(getElement(".second-counter"), 240);
+let firstElement = document.querySelector(".first-counter");
+let secondElement = document.querySelector(".second-counter");
 
-function getElement(selection){
-    const element = document.querySelector(selection);
-    if (element){
-        return element;
-    }
-    throw new Error(`Check "${selection}" make sure such element exists`);
-}
+let firstCounter = new Counter(firstElement, 150);
+let secondCounter = new Counter(secondElement, 250);
 
-
+console.log(Counter.hasOwnProperty(Counter.add))

@@ -116,6 +116,14 @@ function deleTodoItem(e){
     const ITEM = e.currentTarget.parentElement.parentElement;
     const ITEM_ID = ITEM.dataset.id; //grab its id so we can delete it later from local storage
 
+    const modalDiv = document.querySelector(".modal-div");
+    const yesBtn = document.querySelector(".yes");
+    const noBtn = document.querySelector(".no");
+    modalDiv.classList.add("show-modal");
+    modalDiv.addEventListener("click", function(e){
+        console.log(e.target);
+    });
+
     TODO_ITEMS.removeChild(ITEM); //target the parent container and remove the child item
 
     //if there is nothin else in the list, remove clear button as well
