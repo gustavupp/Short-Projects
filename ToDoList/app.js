@@ -1,4 +1,3 @@
-
 //********SELECT ITEMS***********
 const ALERT = document.querySelector(".alert");
 const TODO_FORM = document.querySelector(".todo-form");
@@ -7,10 +6,13 @@ const SUBMIT_BTN = document.querySelector(".submit-btn");
 const INDIVIDUAL_ITEM = document.querySelector(".individual-item");
 const TODO_ITEMS = document.querySelector(".todo-items");
 const CLEAR_BTN = document.querySelector(".clear-btn");
+const MODAL_DIV = document.querySelector(".modal-div");
+const yesBtn = document.querySelector(".yes");
+const noBtn = document.querySelector(".no");
 
 //*********EVENT LISTENERS********
 TODO_FORM.addEventListener("submit", addTodoItem);
-CLEAR_BTN.addEventListener("click", clearAll);
+CLEAR_BTN.addEventListener("click", openModal);
 window.addEventListener("DOMContentLoaded", displayCurrentList);
 
 //DEFAULT SETTINGS
@@ -97,57 +99,36 @@ function setBackToDefault(){
 
 //clear all items
 function clearAll(){
+    const ALL_ITEMS = document.querySelectorAll(".individual-item");
 
-    const modalDiv = document.querySelector(".modal-div");
-    modalDiv.classList.add("show-modal");
-
-    modalDiv.addEventListener("click", function(e){
-        if (e.target.classList.contains("no")){
-            modalDiv.classList.remove("show-modal");
-            return;
-        } else {
-            const ALL_ITEMS = document.querySelectorAll(".individual-item");
-
-            if (ALL_ITEMS.length > 0){
-                ALL_ITEMS.forEach((item) => {
-                    TODO_ITEMS.removeChild(item);
-                });
-            }
-            modalDiv.classList.remove("show-modal");
-            CLEAR_BTN.classList.remove("show-container");
-            displayAlert(ALERT, "List Cleared!", "red");
-            localStorage.removeItem("localStorageList");
-            setBackToDefault();
-        }
-    });
-
-    
+    if (ALL_ITEMS.length > 0){
+        ALL_ITEMS.forEach((item) => {
+            TODO_ITEMS.removeChild(item);
+        });
+    }
+    CLEAR_BTN.classList.remove("show-container");
+    displayAlert(ALERT, "List Cleared!", "red");
+    localStorage.removeItem("localStorageList");
+    MODAL_DIV.classList.remove("show-modal");
+    yesBtn.removeEventListener("click", openModal);
+    setBackToDefault();
 }
 
 //delete item
 function deleTodoItem(e){
+    
     //grab the target button's parent parent
     const ITEM = e.currentTarget.parentElement.parentElement;
     const ITEM_ID = ITEM.dataset.id; //grab its id so we can delete it later from local storage
 
-    const modalDiv = document.querySelector(".modal-div");
-    modalDiv.classList.add("show-modal");
-    modalDiv.addEventListener("click", function(e){
-        if (e.target.classList.contains("no")){
-            modalDiv.classList.remove("show-modal");
-            return;
-        } else {
-            ITEM.remove(); //THIS CODE WAS BEING USED: TODO_ITEMS.removeChild(ITEM) but when I created the modal there was an error and I changed to ITEM.remove(); instead.
+    TODO_ITEMS.removeChild(ITEM); //target the parent container and remove the child item
 
-            //if there is nothin else in the list, remove clear button as well
-            if (TODO_ITEMS.children.length === 0) CLEAR_BTN.classList.remove("show-container");
-            
-            displayAlert(ALERT, "Item Removed", "red");
-            removeFromLocalStorage(ITEM_ID); //remove from local storage
-            setBackToDefault();
-            modalDiv.classList.remove("show-modal");
-        }
-    });
+    //if there is nothin else in the list, remove clear button as well
+    if (TODO_ITEMS.children.length === 0) CLEAR_BTN.classList.remove("show-container");
+     
+    displayAlert(ALERT, "Item Removed", "red");
+    removeFromLocalStorage(ITEM_ID); //remove from local storage
+    setBackToDefault();
 }
 
 //edit item
@@ -199,6 +180,15 @@ function displayCurrentList(){
     });
 }
 
+//open modal to make sure you want to delete all items
+function openModal(){
+    MODAL_DIV.classList.add("show-modal");
+    noBtn.addEventListener("click", function(){
+        MODAL_DIV.classList.remove("show-modal");
+        return;
+    });
+    yesBtn.addEventListener("click", clearAll);
+}
 //*********LOCAL STORAGE********
 //add to local storage
 function addToLocalStorage(id, value){
@@ -238,4 +228,3 @@ function getLocalStorage(){
     //check if there are item in the local storage; if there are, fetch them; if there aren't, return an empty array.
     return localStorage.getItem("localStorageList")? JSON.parse(localStorage.getItem("localStorageList")) : [];
 }
-
