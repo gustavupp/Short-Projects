@@ -97,17 +97,31 @@ function setBackToDefault(){
 
 //clear all items
 function clearAll(){
-    const ALL_ITEMS = document.querySelectorAll(".individual-item");
 
-    if (ALL_ITEMS.length > 0){
-        ALL_ITEMS.forEach((item) => {
-            TODO_ITEMS.removeChild(item);
-        });
-    }
-    CLEAR_BTN.classList.remove("show-container");
-    displayAlert(ALERT, "List Cleared!", "red");
-    localStorage.removeItem("localStorageList");
-    setBackToDefault();
+    const modalDiv = document.querySelector(".modal-div");
+    modalDiv.classList.add("show-modal");
+
+    modalDiv.addEventListener("click", function(e){
+        if (e.target.classList.contains("no")){
+            modalDiv.classList.remove("show-modal");
+            return;
+        } else {
+            const ALL_ITEMS = document.querySelectorAll(".individual-item");
+
+            if (ALL_ITEMS.length > 0){
+                ALL_ITEMS.forEach((item) => {
+                    TODO_ITEMS.removeChild(item);
+                });
+            }
+            modalDiv.classList.remove("show-modal");
+            CLEAR_BTN.classList.remove("show-container");
+            displayAlert(ALERT, "List Cleared!", "red");
+            localStorage.removeItem("localStorageList");
+            setBackToDefault();
+        }
+    });
+
+    
 }
 
 //delete item
@@ -117,21 +131,23 @@ function deleTodoItem(e){
     const ITEM_ID = ITEM.dataset.id; //grab its id so we can delete it later from local storage
 
     const modalDiv = document.querySelector(".modal-div");
-    const yesBtn = document.querySelector(".yes");
-    const noBtn = document.querySelector(".no");
     modalDiv.classList.add("show-modal");
     modalDiv.addEventListener("click", function(e){
-        console.log(e.target);
+        if (e.target.classList.contains("no")){
+            modalDiv.classList.remove("show-modal");
+            return;
+        } else {
+            ITEM.remove(); //THIS CODE WAS BEING USED: TODO_ITEMS.removeChild(ITEM) but when I created the modal there was an error and I changed to ITEM.remove(); instead.
+
+            //if there is nothin else in the list, remove clear button as well
+            if (TODO_ITEMS.children.length === 0) CLEAR_BTN.classList.remove("show-container");
+            
+            displayAlert(ALERT, "Item Removed", "red");
+            removeFromLocalStorage(ITEM_ID); //remove from local storage
+            setBackToDefault();
+            modalDiv.classList.remove("show-modal");
+        }
     });
-
-    TODO_ITEMS.removeChild(ITEM); //target the parent container and remove the child item
-
-    //if there is nothin else in the list, remove clear button as well
-    if (TODO_ITEMS.children.length === 0) CLEAR_BTN.classList.remove("show-container");
-     
-    displayAlert(ALERT, "Item Removed", "red");
-    removeFromLocalStorage(ITEM_ID); //remove from local storage
-    setBackToDefault();
 }
 
 //edit item
