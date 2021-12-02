@@ -84,7 +84,7 @@ function displayAlert(node, text, alertColor){
     node.classList.add(`alert-${alertColor}`);
 
     setTimeout(() => {
-        node.textContent = "invisible alert";
+        node.textContent = "";
         node.classList.remove(`alert-${alertColor}`);
     }, 1000);
 }
