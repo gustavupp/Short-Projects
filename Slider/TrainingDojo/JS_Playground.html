@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { text-align: center;}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="content">
+        <img src="" alt="image" class="img" style="max-width: 150px;">
+    </div>
+    <script>
+    const img = document.querySelector(".img");
+    const content = document.getElementById("content");  
+
+    function handleResponse(response) {
+        
+      for (var i = 0; i < response.items.length; i++) {
+        
+        var item = response.items[i];
+        content.innerHTML += `<br><img src="${(item.volumeInfo.imageLinks) ? img.src= item.volumeInfo.imageLinks.thumbnail : img.alt = "NO IMG :("}" alt="${item.volumeInfo.title}" class="img" style="max-width: 150px;">
+        <h3>${item.volumeInfo.title}, ${item.volumeInfo.subtitle}</h3>` ;
+      }
+    }
+
+    </script>
+    <script src="https://www.googleapis.com/books/v1/volumes?q=harry-potter&callback=handleResponse">
+
+    </script>
+  </body>
+</body>
+</html>
