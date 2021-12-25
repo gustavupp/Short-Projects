@@ -41,11 +41,15 @@
     return acc.concat(curr.key);
   },[]);
 
-  const arr = [{key: 1, key1: 'um'}, {key: 2, key1: 'um'}, {key: 3, key1: 'um'}]
-
   let newArr = [];
-  for(let item of arr){
-    newArr.push(item.key)
+  for(let item of sublinks){
+    newArr.push(item.page)
+        for (let innerItem of item.links){
+            newArr.push(innerItem.label)
+        }
+        // for (let i = 0; i < item.links.length; i++){
+        //     newArr.push(item.links[i].label)
+        // }
   }
 
 console.log(newArr)
