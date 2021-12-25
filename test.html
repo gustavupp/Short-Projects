@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+    const sublinks = [
+  {
+    page: 'products',
+    links: [
+      { label: 'payment',  url: '/products' },
+      { label: 'terminal',  url: '/products' },
+      { label: 'connect',  url: '/products' },
+    ],
+  },
+  {
+    page: 'developers',
+    links: [
+      { label: 'plugins', url: '/products' },
+      { label: 'libraries', url: '/products' },
+      { label: 'help', url: '/products' },
+      { label: 'billing', url: '/products' },
+    ],
+  },
+  {
+    page: 'company',
+    links: [
+      { label: 'about', url: '/products' },
+      { label: 'customers', url: '/products' },
+    ],
+  },
+];
+
+  var flattened = [{key: 1}, {key: 2}, {key: 3}].reduce((acc, curr) => {
+    return acc.concat(curr.key);
+  },[]);
+
+  const arr = [{key: 1, key1: 'um'}, {key: 2, key1: 'um'}, {key: 3, key1: 'um'}]
+
+  let newArr = [];
+  for(let item of arr){
+    newArr.push(item.key)
+  }
+
+console.log(newArr)
+    </script>
+</body>
+</html>

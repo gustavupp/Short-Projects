@@ -6,30 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body { text-align: center;}
+
+        figure {
+          perspective: 1500px;
+        }
+        img {
+          transform: rotateX(10deg) rotateY(-30deg) rotateZ(3deg); 
+          transition: 1s;
+          width: 300px;
+          border-radius: 10px;
+          box-shadow: 3px 5px 10px rgb(34, 34, 34);
+        }
+
+        img:hover {
+          transform: rotateX(10deg) rotateY(30deg) rotateZ(-3deg); 
+        }
     </style>
     <title>Document</title>
 </head>
 <body>
-    
-    <div id="content">
-        <img src="" alt="image" class="img" style="max-width: 150px;">
-    </div>
-    <script>
-    const img = document.querySelector(".img");
-    const content = document.getElementById("content");  
-
-    function handleResponse(response) {
-        
-      for (var i = 0; i < response.items.length; i++) {
-        
-        var item = response.items[i];
-        content.innerHTML += `<br><img src="${(item.volumeInfo.imageLinks) ? img.src= item.volumeInfo.imageLinks.thumbnail : img.alt = "NO IMG :("}" alt="${item.volumeInfo.title}" class="img" style="max-width: 150px;">
-        <h3>${item.volumeInfo.title}, ${item.volumeInfo.subtitle}</h3>` ;
-      }
-    }
-
-    </script>
-    <script src="https://www.googleapis.com/books/v1/volumes?q=harry-potter&callback=handleResponse">
+    <figure>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1624126289l/58375739.jpg" alt="">
+    </figure>
+    <script >
 
     </script>
   </body>

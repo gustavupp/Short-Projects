@@ -121,7 +121,10 @@ function displayCategoryItems() {
     },['Full Menu']);
 
     const categoryButtons = categories.map(function(ctg) {
-        return `<button class="filter-button" type="button" data-category="${ctg}">${ctg}</button>`;
+        return `<button class="filter-button" 
+                    type="button" 
+                    data-category="${ctg}">${ctg}
+                </button>`;
     }).join("");
    
     buttonContainer.innerHTML = categoryButtons;
