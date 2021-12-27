@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Your function takes two arguments:
+        // current father's age (years)
+        // current age of his son (years)
+        // Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old).
+
+        function twiceAsOld(dadYearsOld, sonYearsOld) {
+            return Math.abs(((dadYearsOld - sonYearsOld) * 2) - dadYearsOld);
+        }
+        console.log(twiceAsOld(36, 7))
+
+    </script>
+</body>
+</html>

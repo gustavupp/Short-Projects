@@ -6,30 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body { text-align: center;}
-
-        figure {
-          perspective: 1500px;
-        }
-        img {
-          transform: rotateX(10deg) rotateY(-30deg) rotateZ(3deg); 
-          transition: 1s;
-          width: 300px;
-          border-radius: 10px;
-          box-shadow: 3px 5px 10px rgb(34, 34, 34);
-        }
-
-        img:hover {
-          transform: rotateX(10deg) rotateY(30deg) rotateZ(-3deg); 
-        }
     </style>
     <title>Document</title>
 </head>
 <body>
-    <figure>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1624126289l/58375739.jpg" alt="">
-    </figure>
+    
     <script >
-
+fetch("https://ali-express1.p.rapidapi.com/categories", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "ali-express1.p.rapidapi.com",
+		"x-rapidapi-key": "24394c5069msh0d46ec5f999c1f6p19453ajsnf2e9b90fc38a"
+	}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.error(err);
+});
     </script>
   </body>
 </body>
