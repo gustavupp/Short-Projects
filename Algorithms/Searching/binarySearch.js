@@ -28,4 +28,4 @@ function binarySearch(searchList, value) {
   else return binarySearch(searchList.slice(middle + 1), value)
 }
 
-//console.log(binarySearch([1, 2, 3, 4, 5, 6, 7], 5))
+console.log(binarySearch([1, 2, 3, 4], 1))
