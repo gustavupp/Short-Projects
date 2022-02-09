@@ -60,6 +60,20 @@ function LinkedList() {
     }
     length-- //decrease length
   }
+
+  //returns the index of an element
+  this.indexOfNode = (value) => {
+    let currentNode = head
+    let index = -1
+
+    while (currentNode) {
+      index++
+      if (currentNode.value === value) return index
+      currentNode = currentNode.next
+    }
+
+    return 'Not Found'
+  }
 }
 
 let myLinkedList = new LinkedList()
@@ -70,4 +84,4 @@ myLinkedList.addToEnd(13)
 myLinkedList.addToBeginning(9)
 myLinkedList.remove(10)
 
-console.log(myLinkedList.size(), myLinkedList.head())
+console.log(myLinkedList.indexOfNode(14))
