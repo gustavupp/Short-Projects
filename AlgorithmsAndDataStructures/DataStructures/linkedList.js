@@ -74,14 +74,24 @@ function LinkedList() {
 
     return 'Not Found'
   }
+
+  //reverse linked List
+  this.reverse = () => {
+    let previousNode = null
+    let nextNode
+    while (head !== null) {
+      nextNode = head.next
+      head.next = previousNode
+      previousNode = head
+      head = nextNode
+    }
+    return previousNode
+  }
 }
 
 let myLinkedList = new LinkedList()
-myLinkedList.addToBeginning(11)
-myLinkedList.addToBeginning(10)
-myLinkedList.addToEnd(12)
-myLinkedList.addToEnd(13)
-myLinkedList.addToBeginning(9)
-myLinkedList.remove(10)
+myLinkedList.addToBeginning(2)
+myLinkedList.addToBeginning(1)
+myLinkedList.addToEnd(3)
 
-console.log(myLinkedList.indexOfNode(14))
+console.log(myLinkedList.reverse())
