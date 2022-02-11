@@ -77,21 +77,68 @@ function LinkedList() {
 
   //reverse linked List
   this.reverse = () => {
-    let previousNode = null
+    let previousNode = null //create a "pointer" and intialize with it with null
     let nextNode
     while (head !== null) {
-      nextNode = head.next
-      head.next = previousNode
-      previousNode = head
-      head = nextNode
+      //while we are not at the end of list, keep going
+      nextNode = head.next //asign the pointer to the next node to a variable before changing it
+      head.next = previousNode // assign head/current.next to previous node
+      previousNode = head //before moving to next node, assign head/current as previousNode
+      head = nextNode //and nextNode as head/current
     }
-    return previousNode
+    head = previousNode //assign the value of previousNode back to head, so that .head() method words.
+    return head //return the head
+  }
+
+  //insert value in order
+  this.addInOrder = (value) => {
+    let newNode = new Node(value) //create new node
+
+    if (head === null) {
+      //if list is empty, set newNode as head and return head
+      head = newNode
+      length++
+      return head
+    }
+    if (head.value >= value) {
+      newNode.next = head
+      head = newNode
+      length++
+      return head
+    }
+    let currentNode = head
+
+    while (currentNode.next?.value < value) {
+      currentNode = currentNode.next
+    }
+    let nextPointer = currentNode.next
+    currentNode.next = newNode
+    newNode.next = nextPointer
+    length++
+    return head
+  }
+
+  //print list
+  this.print = () => {
+    let currentNode = head
+
+    while (currentNode !== null) {
+      console.log(currentNode)
+      currentNode = currentNode.next
+    }
   }
 }
 
 let myLinkedList = new LinkedList()
-myLinkedList.addToBeginning(2)
-myLinkedList.addToBeginning(1)
-myLinkedList.addToEnd(3)
+//myLinkedList.addToBeginning(2)
+//myLinkedList.addToBeginning(1)
+//myLinkedList.addToEnd(4)
+myLinkedList.addInOrder(2)
+myLinkedList.addInOrder(4)
+//myLinkedList.addInOrder(0)
+myLinkedList.addInOrder(7)
+myLinkedList.addInOrder(6)
+myLinkedList.addInOrder(5)
+//myLinkedList.reverse()
 
-console.log(myLinkedList.reverse())
+console.log(myLinkedList.print())
