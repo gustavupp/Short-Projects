@@ -21,6 +21,7 @@ function LinkedList() {
 
   //add a new node to the linked list (end of list)
   this.addToEnd = (value) => {
+    console.log(this)
     let newNode = new Node(value) //create a new node
     if (head === null) head = newNode
     //if list is empty, set node as head
@@ -132,7 +133,7 @@ function LinkedList() {
 let myLinkedList = new LinkedList()
 //myLinkedList.addToBeginning(2)
 //myLinkedList.addToBeginning(1)
-//myLinkedList.addToEnd(4)
+myLinkedList.addToEnd(4)
 myLinkedList.addInOrder(2)
 myLinkedList.addInOrder(4)
 //myLinkedList.addInOrder(0)

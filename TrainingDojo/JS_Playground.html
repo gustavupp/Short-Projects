@@ -12,19 +12,85 @@
 <body>
     
     <script >
-fetch("https://ali-express1.p.rapidapi.com/categories", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "ali-express1.p.rapidapi.com",
-		"x-rapidapi-key": "24394c5069msh0d46ec5f999c1f6p19453ajsnf2e9b90fc38a"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.error(err);
-});
+
+//object literals
+const neo = {
+    name : 'Mr. Anderson',
+    nickName: 'Neo',
+    sayLine: function(name, nickName) {
+        //console.log(this)
+        console.log(`I'm ${name}, but you can call me ${nickName}`)
+    }
+}
+
+const neo1 = {
+    name : 'Mr. Anderson',
+    nickName: 'Neo',
+    sayLine: function() {
+        //console.log(this)
+        console.log(`I'm ${this.name}, but you can call me ${this.nickName}`)
+    }
+}
+
+/**************************************************************************/
+
+//factory function
+function createNeo(name, nickName) {
+    return {
+        name: name,
+        nickName: nickName,
+        sayLine: function(){
+            console.log(this)
+            console.log(`I'm ${this.name} but you can call me ${nickName}`)
+        }
+    }
+    //console.log(this)
+}
+const bill = createNeo('Bill Gates','Bill')
+const Anna = createNeo('Anna', 'Ann')
+
+/**************************************************************************/
+//Constructor Functions  
+function NeoConstructor(name, nickName){
+    this.name = name,
+    this.nickName = nickName
+    //if method is defined here, every instance will have its own copy of the method
+    // this.sayLine = function (){
+    //     console.log(`I'm ${this.name} but you can call me ${nickName}`)
+    // }
+    //console.log(this)
+}
+
+//if method is created on the prototype, all instances will have acces to the method withoud having their own copy
+NeoConstructor.prototype.sayLine = function (){
+        console.log(`I'm ${this.name} but you can call me ${nickName}`)
+    }
+
+
+const lisa = new NeoConstructor('Lisa','Lili');
+const gustavo = lisa.constructor('Gustavo','Gus') //goes to the constructor function that created the instance 'aline' and instantiate a new object
+console.log(lisa)
+/**************************************************************************/
+
+//class ES6 sintax
+class Person{
+    constructor(name,age){
+        this.name = name
+        this.age = age
+    }
+    //declaring a method outside the constructor and inside the 'class' creates methods in the objects prototype. same as:
+        //Person.prorotype.sayName = function(){}
+    sayName(){
+        console.log(`I'm ${this.name} and I'm ${this.age} years old`)
+    }
+}
+
+let pereira = new Person('Gus P',31)
+console.log(pereira)
+
+
+
+
     </script>
   </body>
 </body>
