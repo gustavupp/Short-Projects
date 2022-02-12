@@ -1,26 +1,59 @@
-const images = [
-  '../../gustavupp.github.io/gallery/images/city1.jpeg',
-  '../../gustavupp.github.io/gallery/images/city2.jpeg',
-  '../../gustavupp.github.io/gallery/images/city3.jpeg',
-]
+class Slider {
+  constructor() {
+    this.images = [
+      '../../gustavupp.github.io/gallery/images/city1.jpeg',
+      '../../gustavupp.github.io/gallery/images/city2.jpeg',
+      '../../gustavupp.github.io/gallery/images/city3.jpeg',
+    ]
 
-const mainImage = document.querySelector('.main-img')
-const prev = document.querySelector('.prev-btn')
-const next = document.querySelector('.next-btn')
-let index = 0
-mainImage.src = images[index]
+    this.mainImage = document.querySelector('.main-img')
+    this.prev = document.querySelector('.prev-btn')
+    this.next = document.querySelector('.next-btn')
+    //local variable
+    this.index = 0
+    this.mainImage.src = this.images[this.index]
 
-function nextImage() {
-  index++
-  if (index > images.length - 1) index = 0
-  mainImage.src = images[index]
+    this.next.addEventListener('click', this.nextImage.bind(this))
+    this.prev.addEventListener('click', this.prevImage.bind(this))
+  }
+  nextImage() {
+    this.index++
+    if (this.index > this.images.length - 1) this.index = 0
+    this.mainImage.src = this.images[this.index]
+  }
+
+  prevImage() {
+    this.index--
+    if (this.index < 0) this.index = this.images.length - 1
+    this.mainImage.src = this.images[this.index]
+  }
 }
 
-function prevImage() {
-  index--
-  if (index < 0) index = images.length - 1
-  mainImage.src = images[index]
-}
+const mySlider = new Slider()
 
-next.addEventListener('click', nextImage)
-prev.addEventListener('click', prevImage)
+// const images = [
+//   '../../gustavupp.github.io/gallery/images/city1.jpeg',
+//   '../../gustavupp.github.io/gallery/images/city2.jpeg',
+//   '../../gustavupp.github.io/gallery/images/city3.jpeg',
+// ]
+
+// const mainImage = document.querySelector('.main-img')
+// const prev = document.querySelector('.prev-btn')
+// const next = document.querySelector('.next-btn')
+// let index = 0
+// mainImage.src = images[index]
+
+// function nextImage() {
+//   index++
+//   if (index > images.length - 1) index = 0
+//   mainImage.src = images[index]
+// }
+
+// function prevImage() {
+//   index--
+//   if (index < 0) index = images.length - 1
+//   mainImage.src = images[index]
+// }
+
+// next.addEventListener('click', nextImage)
+// prev.addEventListener('click', prevImage)
