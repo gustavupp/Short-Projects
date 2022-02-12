@@ -87,7 +87,17 @@ class Person{
 
 let pereira = new Person('Gus P',31)
 console.log(pereira)
+ /*****************************************************************************/
 
+ function hello(name){
+     console.log(`Hello ${this.name}`)
+ }
+
+let jin = {
+    name: 'Jinny'
+}
+
+ let jinHello = hello.bind(jin)
 
 
 

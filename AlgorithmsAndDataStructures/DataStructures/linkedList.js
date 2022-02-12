@@ -1,5 +1,5 @@
 //linked list implementation
-function LinkedList() {
+export function LinkedList() {
   let length = 0
   let head = null
 
