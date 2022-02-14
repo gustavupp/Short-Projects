@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta length="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //function that creates Nodes
+      class Node {
+        constructor(value) {
+          this.value = value
+          this.next = null
+          this.prev = null
+        }
+      }
+
+      //actual doubly linked list code
+      class DoublyLinkedList {
+        constructor() {
+          let length = 0
+
+          this.checkLength = function () {
+            return length
+          }
+        }
+
+        getLength() {
+          return this.checkLength()
+        }
+      }
+
+      let myLinkedList = new DoublyLinkedList()
+      let myLinkedList1 = new DoublyLinkedList()
+    </script>
+  </body>
+</html>

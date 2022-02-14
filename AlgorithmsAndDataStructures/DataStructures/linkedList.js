@@ -21,7 +21,6 @@ export function LinkedList() {
 
   //add a new node to the linked list (end of list)
   this.addToEnd = (value) => {
-    console.log(this)
     let newNode = new Node(value) //create a new node
     if (head === null) head = newNode
     //if list is empty, set node as head
