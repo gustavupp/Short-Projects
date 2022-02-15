@@ -7,16 +7,15 @@ Return true if there is a cycle in the linked list. Otherwise, return false.*/
 
 var hasCycle = function (head) {
   let current = head
-  let hashMap = {}
-  let index = 0
+  let index = 0 //create an index to keep track of visited nodes
 
   while (current) {
+    //if current node does't have a property called 'pos'(no univisited node does, we are creating this prop on the next line)
     if (!current.pos) {
-      current.pos = index
-      hashMap[index] = current.val
-      current = current.next
-      index++
-    } else return true
+      current.pos = index //create this prop, and assign it the value of index
+      current = current.next //move to next node
+      index++ //increase index
+    } else return true //if you visit a node that contains the .pos prop, it means you have already visited it, so return true
   }
-  return false
+  return false //otherwise return false
 }
