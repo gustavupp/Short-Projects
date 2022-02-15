@@ -20,4 +20,15 @@ An Anagram is a word or phrase formed by rearranging the letters of a different 
 //   else return false
 // }
 
-var isAnagram = function (s, t) {}
+var isAnagram = function (s, t) {
+  let newS = Array.from(s)
+    .sort((a, b) => a.localeCompare(b))
+    .join('')
+  let newT = Array.from(t)
+    .sort((a, b) => a.localeCompare(b))
+    .join('')
+  if (newS === newT) return true
+  else return false
+}
+
+console.log(isAnagram('aa', 'aa'))
