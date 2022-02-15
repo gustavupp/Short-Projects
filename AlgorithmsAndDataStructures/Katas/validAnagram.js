@@ -3,32 +3,34 @@
 
 An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.*/
 
-//bit O(2n) solution.
-// var isAnagram = function (s, t) {
-//   let sSum = 0
-//   let tSum = 0
-
-//   for (let i = 0; i < s.length; i++) {
-//     //add all char codes of each letter
-//     sSum += s[i].charCodeAt()
-//   }
-//   for (let i = 0; i < t.length; i++) {
-//     tSum += t[i].charCodeAt()
-//   }
-//   if (sSum === tSum) return true
-//   //compare the suma
-//   else return false
-// }
-
+//time complexity O(n) and space O(n)
 var isAnagram = function (s, t) {
-  let newS = Array.from(s)
-    .sort((a, b) => a.localeCompare(b))
-    .join('')
-  let newT = Array.from(t)
-    .sort((a, b) => a.localeCompare(b))
-    .join('')
-  if (newS === newT) return true
-  else return false
+  if (s.length !== t.length) return false
+  let hashMapS = {} //create hashmaps
+  let hashMapT = {}
+
+  for (let i = 0; i < s.length; i++) {
+    //count amount of ocurrences of each character and map character and count
+    hashMapS[s[i]] = hashMapS[s[i]] ? hashMapS[s[i]] + 1 : 1
+    hashMapT[t[i]] = hashMapT[t[i]] ? hashMapT[t[i]] + 1 : 1
+  }
+
+  for (let i = 0; i < t.length; i++) {
+    //if given character and count does't match on both return false
+    if (hashMapS[s[i]] !== hashMapT[s[i]]) return false
+  }
+  return true
 }
 
-console.log(isAnagram('aa', 'aa'))
+console.log(isAnagram('aabbbb', 'aaaabb'))
+
+// var isAnagram = function (s, t) {
+//   let newS = Array.from(s)
+//     .sort((a, b) => a.localeCompare(b))
+//     .join('')
+//   let newT = Array.from(t)
+//     .sort((a, b) => a.localeCompare(b))
+//     .join('')
+//   if (newS === newT) return true
+//   else return false
+// }
