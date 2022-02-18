@@ -117,16 +117,6 @@ export function LinkedList() {
     length++
     return head
   }
-
-  //print list
-  this.print = () => {
-    let currentNode = head
-
-    while (currentNode !== null) {
-      console.log(currentNode)
-      currentNode = currentNode.next
-    }
-  }
 }
 
 let myLinkedList = new LinkedList()

@@ -31,6 +31,7 @@
             return head
           }
 
+          //add new node at the head of doubly linked list
           this.addAtHead = function (value) {
             let newNode = new Node(value)
             if (head === null) head = newNode
@@ -43,7 +44,8 @@
             length++
           }
 
-          this.addAtEnd = function (value) {
+          //add new node at the tail of doubly linked list
+          this.addAtTail = function (value) {
             let newNode = new Node(value)
             if (head === null) head = newNode
             else {
@@ -57,6 +59,7 @@
             length++
           }
 
+          //remove a node from the doubly linked list
           this.remove = function (value) {
             if (head === null) throw Error('Cannot delete from empty list')
             if (head.value === value) {
@@ -70,6 +73,32 @@
               curNode.prev.next = curNode.next
               if (curNode.next !== null) curNode.next.prev = curNode.prev
             }
+          }
+
+          //return index of node
+          this.indexOdNode = function (value) {
+            let index = 0
+            if (head === null)
+              throw Error('Cannot return index of an empty list')
+            let curNode = head
+            while (curNode.value !== value) {
+              index++
+              curNode = curNode.next
+            }
+            return index
+          }
+
+          //reverse doubly linked list
+          this.reverse = function () {
+            while (head) {
+              let nextNode = head.next //store pointer to next node
+              head.next = head.prev //current node.next becomes previous node
+              head.prev = nextNode //current node.prev becomes next node
+              if (head.prev !== null) head = nextNode
+              //if we are at the last node before null do not push head to next node, otherwise head = nextNode
+              else break
+            }
+            return head
           }
         }
       }
