@@ -95,10 +95,48 @@
               else curNode = curNode.right
             }
           }
+
+          //remove from BST
+          this.remove = function (value) {
+            //create recursive function to remove node
+            const removeNode = function (node, value) {
+              if (node === null) return null //case bsf is empty
+              if (node.value === value) {
+                //when node to be deleted is found, we have 4 cases
+                if (node.left === null && node.right === null) return null //1. if node has neither children, return null
+                if (node.right === null) return node.left //2. if node has no right child, return left child
+                if (node.left === null) return node.right
+                //3. if node has no left child, return right child
+
+                //4. node has both children
+                let tempNode = node.right
+                while (tempNode.left !== null) tempNode = tempNode.left //go all the way the left
+                node.value = tempNode.value //the value of node we want to delete gets the value of leftmost node
+                node.right = removeNode(node.right, tempNode.value) //call removeNode again on right subtree
+                return node //don't forget to RETURN NODE!!
+              } else if (value > node.value) {
+                node.right = removeNode(node.right, value)
+                return node
+              } else {
+                node.left = removeNode(node.left, value)
+                return node
+              }
+            }
+
+            //call removeNode on the root node
+            root = removeNode(root, value)
+          }
         }
       }
 
       let bst = new BST()
+
+      bst.add(8)
+      bst.add(3)
+      bst.add(6)
+      bst.add(7)
+      bst.add(4)
+      bst.add(1)
     </script>
   </body>
 </html>
