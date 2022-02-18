@@ -21,10 +21,12 @@
           let root = null
           let depth = 0
 
+          //returns root node of BST
           this.root = function () {
             return root
           }
 
+          //add new node to BST
           this.add = function (value) {
             let newNode = new Node(value) //create new node
             let curNode = root //set var curNode as the root, so we can start traversing the BST
@@ -58,6 +60,39 @@
                 } else throw Error('Cannot add existing value')
               }
               searchTree(curNode)
+            }
+          }
+
+          //returns true if node is present in the tree
+          this.isPresent = function (value) {
+            let curNode = root
+            while (curNode.value !== value) {
+              if (value > curNode.value) {
+                if (curNode.right === null) return false
+                curNode = curNode.right
+              } else {
+                if (curNode.left === null) return false
+                curNode = curNode.left
+              }
+            }
+            return true
+          }
+
+          //return min node
+          this.min = function () {
+            let curNode = root
+            while (curNode) {
+              if (curNode.left == null) return curNode.value
+              else curNode = curNode.left
+            }
+          }
+
+          //return max node
+          this.max = function () {
+            let curNode = root
+            while (curNode) {
+              if (curNode.right === null) return curNode.value
+              else curNode = curNode.right
             }
           }
         }
