@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Node {
+        constructor(value) {
+          this.value = value
+          this.right = null
+          this.left = null
+        }
+      }
+
+      class BST {
+        constructor() {
+          let root = null
+          let depth = 0
+
+          this.root = function () {
+            return root
+          }
+
+          this.add = function (value) {
+            let newNode = new Node(value) //create new node
+            let curNode = root //set var curNode as the root, so we can start traversing the BST
+            if (root === null) {
+              //if tree is empty, set newNode as the root
+              root = newNode
+              return
+            } else {
+              //if tree is not empty
+              const searchTree = function (curNode) {
+                //define search function to locate where to add newNode
+
+                if (value < curNode.value) {
+                  // if value is less then the value of current node, search left subtree
+                  if (curNode.left === null) {
+                    //if left subtree is empty, add newNode to left subtree
+                    curNode.left = newNode //otherwise recursively call the function again to keep searching for a null node
+                    return
+                  } else {
+                    return searchTree(curNode.left)
+                  }
+                } else if (value > curNode.value) {
+                  //if value is more then the value of current node, search right subtree (we are not allowing duplicate values)
+                  if (curNode.right === null) {
+                    //if right subtree is empty, set newNode to right subtree
+                    curNode.right = newNode
+                    return
+                  } else {
+                    return searchTree(curNode.right) //otherwise recursively call the function again to keep searching for a null node
+                  }
+                } else throw Error('Cannot add existing value')
+              }
+              searchTree(curNode)
+            }
+          }
+        }
+      }
+
+      let bst = new BST()
+    </script>
+  </body>
+</html>
