@@ -21,19 +21,60 @@
       class DoublyLinkedList {
         constructor() {
           let length = 0
+          let head = null
 
-          this.checkLength = function () {
+          this.getLength = function () {
             return length
           }
-        }
 
-        getLength() {
-          return this.checkLength()
+          this.getHead = function () {
+            return head
+          }
+
+          this.addAtHead = function (value) {
+            let newNode = new Node(value)
+            if (head === null) head = newNode
+            else {
+              head.prev = newNode
+              newNode.next = head
+              head = newNode
+            }
+
+            length++
+          }
+
+          this.addAtEnd = function (value) {
+            let newNode = new Node(value)
+            if (head === null) head = newNode
+            else {
+              let curNode = head
+              while (curNode.next) {
+                curNode = curNode.next
+              }
+              curNode.next = newNode
+              newNode.prev = curNode
+            }
+            length++
+          }
+
+          this.remove = function (value) {
+            if (head === null) throw Error('Cannot delete from empty list')
+            if (head.value === value) {
+              head = head.next
+              if (head !== null) head.prev = null
+            } else {
+              let curNode = head
+              while (curNode.value !== value) {
+                curNode = curNode.next
+              }
+              curNode.prev.next = curNode.next
+              if (curNode.next !== null) curNode.next.prev = curNode.prev
+            }
+          }
         }
       }
 
       let myLinkedList = new DoublyLinkedList()
-      let myLinkedList1 = new DoublyLinkedList()
     </script>
   </body>
 </html>
