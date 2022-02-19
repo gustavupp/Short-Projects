@@ -16,127 +16,149 @@
         }
       }
 
-      class BST {
-        constructor() {
-          let root = null
-          let depth = 0
+      class BST1 {
+        length = 0
 
-          //returns root node of BST
-          this.root = function () {
-            return root
-          }
-
-          //add new node to BST
-          this.add = function (value) {
-            let newNode = new Node(value) //create new node
-            let curNode = root //set var curNode as the root, so we can start traversing the BST
-            if (root === null) {
-              //if tree is empty, set newNode as the root
-              root = newNode
-              return
-            } else {
-              //if tree is not empty
-              const searchTree = function (curNode) {
-                //define search function to locate where to add newNode
-
-                if (value < curNode.value) {
-                  // if value is less then the value of current node, search left subtree
-                  if (curNode.left === null) {
-                    //if left subtree is empty, add newNode to left subtree
-                    curNode.left = newNode //otherwise recursively call the function again to keep searching for a null node
-                    return
-                  } else {
-                    return searchTree(curNode.left)
-                  }
-                } else if (value > curNode.value) {
-                  //if value is more then the value of current node, search right subtree (we are not allowing duplicate values)
-                  if (curNode.right === null) {
-                    //if right subtree is empty, set newNode to right subtree
-                    curNode.right = newNode
-                    return
-                  } else {
-                    return searchTree(curNode.right) //otherwise recursively call the function again to keep searching for a null node
-                  }
-                } else throw Error('Cannot add existing value')
-              }
-              searchTree(curNode)
-            }
-          }
-
-          //returns true if node is present in the tree
-          this.isPresent = function (value) {
-            let curNode = root
-            while (curNode.value !== value) {
-              if (value > curNode.value) {
-                if (curNode.right === null) return false
-                curNode = curNode.right
-              } else {
-                if (curNode.left === null) return false
-                curNode = curNode.left
-              }
-            }
-            return true
-          }
-
-          //return min node
-          this.min = function () {
-            let curNode = root
-            while (curNode) {
-              if (curNode.left == null) return curNode.value
-              else curNode = curNode.left
-            }
-          }
-
-          //return max node
-          this.max = function () {
-            let curNode = root
-            while (curNode) {
-              if (curNode.right === null) return curNode.value
-              else curNode = curNode.right
-            }
-          }
-
-          //remove from BST
-          this.remove = function (value) {
-            //create recursive function to remove node
-            const removeNode = function (node, value) {
-              if (node === null) return null //case bsf is empty
-              if (node.value === value) {
-                //when node to be deleted is found, we have 4 cases
-                if (node.left === null && node.right === null) return null //1. if node has neither children, return null
-                if (node.right === null) return node.left //2. if node has no right child, return left child
-                if (node.left === null) return node.right
-                //3. if node has no left child, return right child
-
-                //4. node has both children
-                let tempNode = node.right
-                while (tempNode.left !== null) tempNode = tempNode.left //go all the way the left
-                node.value = tempNode.value //the value of node we want to delete gets the value of leftmost node
-                node.right = removeNode(node.right, tempNode.value) //call removeNode again on right subtree
-                return node //don't forget to RETURN NODE!!
-              } else if (value > node.value) {
-                node.right = removeNode(node.right, value)
-                return node
-              } else {
-                node.left = removeNode(node.left, value)
-                return node
-              }
-            }
-
-            //call removeNode on the root node
-            root = removeNode(root, value)
-          }
+        setLength() {
+          this.length++
         }
       }
 
-      let bst = new BST()
+      class BST {
+        #length
+        constructor(length) {
+          this.#length = length
+        }
 
-      bst.add(8)
-      bst.add(3)
-      bst.add(6)
-      bst.add(7)
-      bst.add(4)
-      bst.add(1)
+        setLength(value) {
+          return this.#length
+        }
+      }
+
+      const bst = new BST(3)
+      const bst1 = new BST1()
+
+      // class BST {
+      //   constructor() {
+      //     let root = null
+      //     let depth = 0
+
+      //     //returns root node of BST
+      //     this.root = function () {
+      //       return root
+      //     }
+
+      //     //add new node to BST
+      //     this.add = function (value) {
+      //       let newNode = new Node(value) //create new node
+      //       let curNode = root //set var curNode as the root, so we can start traversing the BST
+      //       if (root === null) {
+      //         //if tree is empty, set newNode as the root
+      //         root = newNode
+      //         return
+      //       } else {
+      //         //if tree is not empty
+      //         const searchTree = function (curNode) {
+      //           //define search function to locate where to add newNode
+
+      //           if (value < curNode.value) {
+      //             // if value is less then the value of current node, search left subtree
+      //             if (curNode.left === null) {
+      //               //if left subtree is empty, add newNode to left subtree
+      //               curNode.left = newNode //otherwise recursively call the function again to keep searching for a null node
+      //               return
+      //             } else {
+      //               return searchTree(curNode.left)
+      //             }
+      //           } else if (value > curNode.value) {
+      //             //if value is more then the value of current node, search right subtree (we are not allowing duplicate values)
+      //             if (curNode.right === null) {
+      //               //if right subtree is empty, set newNode to right subtree
+      //               curNode.right = newNode
+      //               return
+      //             } else {
+      //               return searchTree(curNode.right) //otherwise recursively call the function again to keep searching for a null node
+      //             }
+      //           } else throw Error('Cannot add existing value')
+      //         }
+      //         searchTree(curNode)
+      //       }
+      //     }
+
+      //     //returns true if node is present in the tree
+      //     this.isPresent = function (value) {
+      //       let curNode = root
+      //       while (curNode.value !== value) {
+      //         if (value > curNode.value) {
+      //           if (curNode.right === null) return false
+      //           curNode = curNode.right
+      //         } else {
+      //           if (curNode.left === null) return false
+      //           curNode = curNode.left
+      //         }
+      //       }
+      //       return true
+      //     }
+
+      //     //return min node
+      //     this.min = function () {
+      //       let curNode = root
+      //       while (curNode) {
+      //         if (curNode.left == null) return curNode.value
+      //         else curNode = curNode.left
+      //       }
+      //     }
+
+      //     //return max node
+      //     this.max = function () {
+      //       let curNode = root
+      //       while (curNode) {
+      //         if (curNode.right === null) return curNode.value
+      //         else curNode = curNode.right
+      //       }
+      //     }
+
+      //     //remove from BST
+      //     this.remove = function (value) {
+      //       //create recursive function to remove node
+      //       const removeNode = function (node, value) {
+      //         if (node === null) return null //case bsf is empty
+      //         if (node.value === value) {
+      //           //when node to be deleted is found, we have 4 cases
+      //           if (node.left === null && node.right === null) return null //1. if node has neither children, return null
+      //           if (node.right === null) return node.left //2. if node has no right child, return left child
+      //           if (node.left === null) return node.right
+      //           //3. if node has no left child, return right child
+
+      //           //4. node has both children
+      //           let tempNode = node.right
+      //           while (tempNode.left !== null) tempNode = tempNode.left //go all the way the left
+      //           node.value = tempNode.value //the value of node we want to delete gets the value of leftmost node
+      //           node.right = removeNode(node.right, tempNode.value) //call removeNode again on right subtree
+      //           return node //don't forget to RETURN THE NODE!!
+      //         } else if (value > node.value) {
+      //           node.right = removeNode(node.right, value)
+      //           return node
+      //         } else {
+      //           node.left = removeNode(node.left, value)
+      //           return node
+      //         }
+      //       }
+
+      //       //call removeNode on the root node
+      //       root = removeNode(root, value)
+      //     }
+      //   }
+      // }
+
+      // let bst = new BST()
+
+      // bst.add(8)
+      // bst.add(3)
+      // bst.add(6)
+      // bst.add(7)
+      // bst.add(4)
+      // bst.add(1)
     </script>
   </body>
 </html>
