@@ -9,14 +9,16 @@
   }
 }*/
 
-function bfsBinarySearchTree(rootNode) {
+function bfsBinarySearchTree(node = root) {
   if (root === null) return
-  let queue = rootNode //create a queue and push root node to the queue
+  let queue = [node] //create a queue and push root node to the queue
+  let searchOrder = [] //create an array to return elements in search order
 
-  while (queue !== null) {
-    let curNode = queue.shift()
-    console.log(curNode.value)
-    if (curNode.left !== null) queue.push(curNode.left)
+  while (queue.length !== 0) {
+    let curNode = queue.shift() //remove first element of queue and assign it as current Node
+    searchOrder.push(curNode.value) //push its value to return array
+    if (curNode.left !== null) queue.push(curNode.left) //if left or right children are not null, push them to queue
     if (curNode.right !== null) queue.push(curNode.right)
   }
+  return searchOrder
 }
