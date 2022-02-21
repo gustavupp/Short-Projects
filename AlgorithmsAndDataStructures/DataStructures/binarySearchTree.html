@@ -148,8 +148,10 @@
             let left = this.minHeight(node.left)
             let right = this.minHeight(node.right)
 
+            if (right === 0) return left + 1
+            if (left === 0) return right + 1
             if (left < right) return 1 + left
-            else return 1 + right
+            else return right + 1
           }
 
           //Iterative BFS returs all visited nodes in the search order
