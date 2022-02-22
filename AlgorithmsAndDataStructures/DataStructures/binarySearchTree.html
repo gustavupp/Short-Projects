@@ -208,21 +208,29 @@
             }
             return result
           }
+
+          //
+          this.isSameTree = function (node = root) {
+            let result = []
+            function bfsFunc(node) {
+              if (node === null) return
+              if (node.left) bfsFunc(node.left)
+              result.push(node.value)
+              if (node.right) bfsFunc(node.right)
+            }
+            bfsFunc(node)
+            return result
+          }
         }
       }
 
       let bst = new BST()
+      let bst1 = new BST()
 
-      bst.add(8)
-      bst.add(4)
-      bst.add(12)
-      bst.add(2)
-      bst.add(6)
-      bst.add(10)
-      bst.add(13)
-      bst.add(11)
-      bst.add(7)
       bst.add(1)
+      bst.add(null)
+      bst.add(2)
+      bst1.add(1)
     </script>
   </body>
 </html>
