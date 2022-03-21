@@ -208,19 +208,6 @@
             }
             return result
           }
-
-          //
-          this.isSameTree = function (node = root) {
-            let result = []
-            function bfsFunc(node) {
-              if (node === null) return
-              if (node.left) bfsFunc(node.left)
-              result.push(node.value)
-              if (node.right) bfsFunc(node.right)
-            }
-            bfsFunc(node)
-            return result
-          }
         }
       }
 
