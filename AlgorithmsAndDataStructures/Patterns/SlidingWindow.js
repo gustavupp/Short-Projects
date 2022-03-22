@@ -1,3 +1,7 @@
+//PATTERN
+//Time Complexity# O(N)
+//Space Complexity# O(1)
+
 function find_averages_of_subarrays(K, arr) {
   const result = []
   let windowSum = 0,
