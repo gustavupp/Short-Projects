@@ -21,7 +21,6 @@ var countGoodSubstrings = function (s) {
       winStart++
       curString = curString.slice(1)
     }
-    console.log({ curString, winStart, winEnd, count })
   }
   return count
 }
