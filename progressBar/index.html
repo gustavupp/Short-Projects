@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Bar</title>
+    <style>
+      .container {
+        width: 500px;
+        height: 30px;
+        background-color: grey;
+        border-radius: 10px;
+        overflow-x: hidden;
+      }
+      .bar {
+        height: 100%;
+        width: 0%;
+        background-color: blue;
+      }
+
+      .x {
+        transition: 1s linear width;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bar"></div>
+    </div>
+    <br />
+    <button onclick="load1(2)">Load!</button>
+    <script>
+      function load() {
+        const bar = document.querySelector('.bar').classList.add('x')
+        // bar.style.transition = '1s linear width'
+        // bar.style.width = '100%'
+      }
+
+      function load1(seconds) {
+        const bar = document.querySelector('.bar')
+        let counter = 0
+
+        let int = setInterval(() => {
+          bar.style.width = `${counter}%`
+          counter++
+        }, (seconds * 1000) / 100)
+
+        if (counter >= 100) clearInterval(int)
+      }
+    </script>
+  </body>
+</html>
