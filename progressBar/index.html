@@ -32,12 +32,15 @@
     <br />
     <button onclick="load1(2)">Load!</button>
     <script>
+      //easier using css
       function load() {
+        //using classList
         const bar = document.querySelector('.bar').classList.add('x')
+        //setting individual properties
         // bar.style.transition = '1s linear width'
         // bar.style.width = '100%'
       }
-
+      //alternative using javaScript
       function load1(seconds) {
         const bar = document.querySelector('.bar')
         let counter = 0
