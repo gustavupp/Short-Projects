@@ -1,0 +1,15 @@
+D:\CODE\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\CountingDuplicates.csproj.AssemblyReference.cache
+D:\CODE\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\CountingDuplicates.GeneratedMSBuildEditorConfig.editorconfig
+D:\CODE\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\CountingDuplicates.AssemblyInfoInputs.cache
+D:\CODE\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\CountingDuplicates.AssemblyInfo.cs
+D:\CODE\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\CountingDuplicates.csproj.CoreCompileInputs.cache
+D:\CODE\CountingDuplicates\CountingDuplicates\bin\Debug\net6.0\CountingDuplicates.exe
+D:\CODE\CountingDuplicates\CountingDuplicates\bin\Debug\net6.0\CountingDuplicates.deps.json
+D:\CODE\CountingDuplicates\CountingDuplicates\bin\Debug\net6.0\CountingDuplicates.runtimeconfig.json
+D:\CODE\CountingDuplicates\CountingDuplicates\bin\Debug\net6.0\CountingDuplicates.dll
+D:\CODE\CountingDuplicates\CountingDuplicates\bin\Debug\net6.0\CountingDuplicates.pdb
+D:\CODE\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\CountingDuplicates.dll
+D:\CODE\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\refint\CountingDuplicates.dll
+D:\CODE\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\CountingDuplicates.pdb
+D:\CODE\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\CountingDuplicates.genruntimeconfig.cache
+D:\CODE\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\ref\CountingDuplicates.dll
