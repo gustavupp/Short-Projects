@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CODE\\CountingDuplicates\\CountingDuplicates\\CountingDuplicates.csproj": {}
+    "D:\\CODE\\Short-Projects\\AlgorithmsAndDataStructures\\Katas\\CountingDuplicates\\CountingDuplicates\\CountingDuplicates.csproj": {}
   },
   "projects": {
-    "D:\\CODE\\CountingDuplicates\\CountingDuplicates\\CountingDuplicates.csproj": {
+    "D:\\CODE\\Short-Projects\\AlgorithmsAndDataStructures\\Katas\\CountingDuplicates\\CountingDuplicates\\CountingDuplicates.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CODE\\CountingDuplicates\\CountingDuplicates\\CountingDuplicates.csproj",
+        "projectUniqueName": "D:\\CODE\\Short-Projects\\AlgorithmsAndDataStructures\\Katas\\CountingDuplicates\\CountingDuplicates\\CountingDuplicates.csproj",
         "projectName": "CountingDuplicates",
-        "projectPath": "D:\\CODE\\CountingDuplicates\\CountingDuplicates\\CountingDuplicates.csproj",
+        "projectPath": "D:\\CODE\\Short-Projects\\AlgorithmsAndDataStructures\\Katas\\CountingDuplicates\\CountingDuplicates\\CountingDuplicates.csproj",
         "packagesPath": "C:\\Users\\Oleaw Digital\\.nuget\\packages\\",
-        "outputPath": "D:\\CODE\\CountingDuplicates\\CountingDuplicates\\obj\\",
+        "outputPath": "D:\\CODE\\Short-Projects\\AlgorithmsAndDataStructures\\Katas\\CountingDuplicates\\CountingDuplicates\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Oleaw Digital\\AppData\\Roaming\\NuGet\\NuGet.Config",
