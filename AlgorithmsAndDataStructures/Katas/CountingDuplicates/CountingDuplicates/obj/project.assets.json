@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CODE\\Short-Projects\\AlgorithmsAndDataStructures\\Katas\\CountingDuplicates\\CountingDuplicates\\CountingDuplicates.csproj",
-      "projectName": "CountingDuplicates",
-      "projectPath": "D:\\CODE\\Short-Projects\\AlgorithmsAndDataStructures\\Katas\\CountingDuplicates\\CountingDuplicates\\CountingDuplicates.csproj",
+      "projectUniqueName": "D:\\CODE\\Short-Projects\\AlgorithmsAndDataStructures\\Katas\\CountingDuplicates\\CountingDuplicates\\CSharpKatas.csproj",
+      "projectName": "CSharpKatas",
+      "projectPath": "D:\\CODE\\Short-Projects\\AlgorithmsAndDataStructures\\Katas\\CountingDuplicates\\CountingDuplicates\\CSharpKatas.csproj",
       "packagesPath": "C:\\Users\\Oleaw Digital\\.nuget\\packages\\",
       "outputPath": "D:\\CODE\\Short-Projects\\AlgorithmsAndDataStructures\\Katas\\CountingDuplicates\\CountingDuplicates\\obj\\",
       "projectStyle": "PackageReference",

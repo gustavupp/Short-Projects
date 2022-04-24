@@ -1,0 +1,15 @@
+D:\CODE\Short-Projects\AlgorithmsAndDataStructures\Katas\CountingDuplicates\CountingDuplicates\bin\Debug\net6.0\CSharpKatas.exe
+D:\CODE\Short-Projects\AlgorithmsAndDataStructures\Katas\CountingDuplicates\CountingDuplicates\bin\Debug\net6.0\CSharpKatas.deps.json
+D:\CODE\Short-Projects\AlgorithmsAndDataStructures\Katas\CountingDuplicates\CountingDuplicates\bin\Debug\net6.0\CSharpKatas.runtimeconfig.json
+D:\CODE\Short-Projects\AlgorithmsAndDataStructures\Katas\CountingDuplicates\CountingDuplicates\bin\Debug\net6.0\CSharpKatas.dll
+D:\CODE\Short-Projects\AlgorithmsAndDataStructures\Katas\CountingDuplicates\CountingDuplicates\bin\Debug\net6.0\CSharpKatas.pdb
+D:\CODE\Short-Projects\AlgorithmsAndDataStructures\Katas\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\CSharpKatas.csproj.AssemblyReference.cache
+D:\CODE\Short-Projects\AlgorithmsAndDataStructures\Katas\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\CSharpKatas.GeneratedMSBuildEditorConfig.editorconfig
+D:\CODE\Short-Projects\AlgorithmsAndDataStructures\Katas\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\CSharpKatas.AssemblyInfoInputs.cache
+D:\CODE\Short-Projects\AlgorithmsAndDataStructures\Katas\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\CSharpKatas.AssemblyInfo.cs
+D:\CODE\Short-Projects\AlgorithmsAndDataStructures\Katas\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\CSharpKatas.csproj.CoreCompileInputs.cache
+D:\CODE\Short-Projects\AlgorithmsAndDataStructures\Katas\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\CSharpKatas.dll
+D:\CODE\Short-Projects\AlgorithmsAndDataStructures\Katas\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\refint\CSharpKatas.dll
+D:\CODE\Short-Projects\AlgorithmsAndDataStructures\Katas\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\CSharpKatas.pdb
+D:\CODE\Short-Projects\AlgorithmsAndDataStructures\Katas\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\CSharpKatas.genruntimeconfig.cache
+D:\CODE\Short-Projects\AlgorithmsAndDataStructures\Katas\CountingDuplicates\CountingDuplicates\obj\Debug\net6.0\ref\CSharpKatas.dll

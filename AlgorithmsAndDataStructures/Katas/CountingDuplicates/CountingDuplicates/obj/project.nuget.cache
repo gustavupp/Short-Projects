@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "523fZGftr0a22CReHdo5/PqDM/P+PI6/trlrlXPBpleg1cZHae1n6JO+imDRlRniC/VasS+LWKPnrTlmbUet0A==",
+  "dgSpecHash": "oZZNhznzlh6A3a0McDRrJBaOJlikfeB8DEer8rpdh0CF2LzaK8S0sj9v+vaNMaHc5s6LZatlEHWALt4Hj+F+QQ==",
   "success": true,
-  "projectFilePath": "D:\\CODE\\Short-Projects\\AlgorithmsAndDataStructures\\Katas\\CountingDuplicates\\CountingDuplicates\\CountingDuplicates.csproj",
+  "projectFilePath": "D:\\CODE\\Short-Projects\\AlgorithmsAndDataStructures\\Katas\\CountingDuplicates\\CountingDuplicates\\CSharpKatas.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
