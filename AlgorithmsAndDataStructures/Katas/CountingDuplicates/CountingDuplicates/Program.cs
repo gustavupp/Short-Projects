@@ -7,7 +7,15 @@ namespace CountingDuplicates
     {
         static void Main()
         {
-            DuplicateCount.DuplicateCountMethod("Indivisibilities");
+            //DuplicateCount.DuplicateCountMethod("Indivisibilities");
+            ArrayOfAnagrams.Anagrams("racer", new List<string>()
+            {
+                "crazer",
+                "carer",
+                "racar",
+                "caers",
+                "racer",
+            });
         }
     }
 
