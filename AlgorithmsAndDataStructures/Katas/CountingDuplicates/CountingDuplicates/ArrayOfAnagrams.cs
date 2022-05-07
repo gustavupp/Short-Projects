@@ -11,10 +11,12 @@ namespace CSharpKatas
         public static List<string> Anagrams(string word, List<string> words)
         {
 
-            var reversedWord = ReverseWord(word);
-            var result = words.Where(w => ReverseWord(w) == reversedWord).ToList();
+            var reversedWord = new String(Array.Sort(word.ToCharArray()));
 
-            foreach(var r in result)
+            var result = words.Where(w => new String(w.ToCharArray().Reverse().ToArray()) == reversedWord).ToList();
+
+
+            foreach (var r in result)
             {
                 Console.WriteLine(r);
             }
@@ -22,11 +24,5 @@ namespace CSharpKatas
             return result;
         }
 
-        public static string ReverseWord(string word)
-        {
-            var reversedArray = word.ToCharArray().Reverse();
-            var reversedWord = new String(reversedArray.ToArray());
-            return reversedWord;
-        }
     }
 }

@@ -8,14 +8,7 @@ namespace CountingDuplicates
         static void Main()
         {
             //DuplicateCount.DuplicateCountMethod("Indivisibilities");
-            ArrayOfAnagrams.Anagrams("racer", new List<string>()
-            {
-                "crazer",
-                "carer",
-                "racar",
-                "caers",
-                "racer",
-            });
+            ArrayOfAnagrams.Anagrams("racer", new List<string> { "carer", "arcre", "carre", "racrs", "racers", "arceer", "raccer", "carrer", "cerarr" });
         }
     }
 
