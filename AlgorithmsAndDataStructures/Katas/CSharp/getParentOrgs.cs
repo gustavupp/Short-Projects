@@ -50,16 +50,14 @@ namespace getParentOrgs
                     returnList.Insert(0, parentOrg);
                     targetOrg = parentOrg;
                 }
-
                 return returnList;
             }
 
             public static List<Org> GetParentOrgsRecursively(List<Org> orgsList, Org targetOrg)
             {
                 if (!targetOrg.ParentID.HasValue) return new List<Org>() { targetOrg };
-
                 var parentOrg = orgsList.Find(o => o.ID == targetOrg.ParentID);
-                return new List<Org> (GetParentOrgsRecursively(orgsList, parentOrg)) { parentOrg };
+                return new List<Org> (GetParentOrgsRecursively(orgsList, parentOrg));
             }
         }
     }
