@@ -33,8 +33,8 @@ console.log(getParentOrgs(orgsList, targetOrg))
 
 // iterative version
 function getParentsIteratively(orgsList, targetOrg) {
-  if (targetOrg.parentId === null) return targetOrg
   let returnArray = [targetOrg]
+  if (targetOrg.parentId === null) return [targetOrg]
 
   while (targetOrg.parentId !== null) {
     let parentOrg = orgsList.find((o) => o.id === targetOrg.parentId)
