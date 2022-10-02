@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hzh2OnREYHd0PmofR7ajCDDhsQlo8FrdU55k4Bf1eJnYUp/urwO1ypW1kqovKwOPyq39XwWvGqyAB6Gjt4XpyQ==",
+  "success": true,
+  "projectFilePath": "D:\\CODE\\Short-Projects\\JStoCSharp\\DelegatesAndFunctions\\FunctionsAnsdActions\\FunctionsAnsdActions.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Oleaw Digital\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
+  ],
+  "logs": []
+}

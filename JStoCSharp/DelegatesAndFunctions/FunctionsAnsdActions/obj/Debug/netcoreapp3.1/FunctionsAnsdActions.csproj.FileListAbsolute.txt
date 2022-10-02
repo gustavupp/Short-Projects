@@ -1,0 +1,14 @@
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\FunctionsAnsdActions\bin\Debug\netcoreapp3.1\FunctionsAnsdActions.exe
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\FunctionsAnsdActions\bin\Debug\netcoreapp3.1\FunctionsAnsdActions.deps.json
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\FunctionsAnsdActions\bin\Debug\netcoreapp3.1\FunctionsAnsdActions.runtimeconfig.json
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\FunctionsAnsdActions\bin\Debug\netcoreapp3.1\FunctionsAnsdActions.runtimeconfig.dev.json
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\FunctionsAnsdActions\bin\Debug\netcoreapp3.1\FunctionsAnsdActions.dll
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\FunctionsAnsdActions\bin\Debug\netcoreapp3.1\FunctionsAnsdActions.pdb
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\FunctionsAnsdActions\obj\Debug\netcoreapp3.1\FunctionsAnsdActions.csproj.AssemblyReference.cache
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\FunctionsAnsdActions\obj\Debug\netcoreapp3.1\FunctionsAnsdActions.GeneratedMSBuildEditorConfig.editorconfig
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\FunctionsAnsdActions\obj\Debug\netcoreapp3.1\FunctionsAnsdActions.AssemblyInfoInputs.cache
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\FunctionsAnsdActions\obj\Debug\netcoreapp3.1\FunctionsAnsdActions.AssemblyInfo.cs
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\FunctionsAnsdActions\obj\Debug\netcoreapp3.1\FunctionsAnsdActions.csproj.CoreCompileInputs.cache
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\FunctionsAnsdActions\obj\Debug\netcoreapp3.1\FunctionsAnsdActions.dll
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\FunctionsAnsdActions\obj\Debug\netcoreapp3.1\FunctionsAnsdActions.pdb
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\FunctionsAnsdActions\obj\Debug\netcoreapp3.1\FunctionsAnsdActions.genruntimeconfig.cache
