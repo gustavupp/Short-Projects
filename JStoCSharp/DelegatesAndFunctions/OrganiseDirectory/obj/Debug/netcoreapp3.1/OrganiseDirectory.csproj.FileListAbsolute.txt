@@ -1,0 +1,14 @@
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\OrganiseDirectory\bin\Debug\netcoreapp3.1\OrganiseDirectory.exe
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\OrganiseDirectory\bin\Debug\netcoreapp3.1\OrganiseDirectory.deps.json
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\OrganiseDirectory\bin\Debug\netcoreapp3.1\OrganiseDirectory.runtimeconfig.json
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\OrganiseDirectory\bin\Debug\netcoreapp3.1\OrganiseDirectory.runtimeconfig.dev.json
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\OrganiseDirectory\bin\Debug\netcoreapp3.1\OrganiseDirectory.dll
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\OrganiseDirectory\bin\Debug\netcoreapp3.1\OrganiseDirectory.pdb
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\OrganiseDirectory\obj\Debug\netcoreapp3.1\OrganiseDirectory.csproj.AssemblyReference.cache
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\OrganiseDirectory\obj\Debug\netcoreapp3.1\OrganiseDirectory.GeneratedMSBuildEditorConfig.editorconfig
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\OrganiseDirectory\obj\Debug\netcoreapp3.1\OrganiseDirectory.AssemblyInfoInputs.cache
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\OrganiseDirectory\obj\Debug\netcoreapp3.1\OrganiseDirectory.AssemblyInfo.cs
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\OrganiseDirectory\obj\Debug\netcoreapp3.1\OrganiseDirectory.csproj.CoreCompileInputs.cache
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\OrganiseDirectory\obj\Debug\netcoreapp3.1\OrganiseDirectory.dll
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\OrganiseDirectory\obj\Debug\netcoreapp3.1\OrganiseDirectory.pdb
+D:\CODE\Short-Projects\JStoCSharp\DelegatesAndFunctions\OrganiseDirectory\obj\Debug\netcoreapp3.1\OrganiseDirectory.genruntimeconfig.cache
