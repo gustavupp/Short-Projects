@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "bWn+KF/jUmqUmNzjog6i8HBVyhNdulWjcryulMZR1HawtsrSlXVsJuVKYA6S+EKZHijEX1fy23j+EiCQU/z2iQ==",
+  "success": true,
+  "projectFilePath": "D:\\CODE\\Short-Projects\\OrganiseDirectory\\OrganiseDirectory.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Oleaw Digital\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Oleaw Digital\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Oleaw Digital\\.nuget\\packages"
+    ]
+  }
+}
