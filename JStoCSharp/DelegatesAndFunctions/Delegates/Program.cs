@@ -6,27 +6,26 @@ namespace Delegates
     internal class Program
     {
         // declare the function/delegate
-        public delegate void MyLog(string msg);
+        public delegate void MyCustomDelegateType(string msg);
+        public delegate bool testDelegate<in T>(T i);
         
         static void Main(string[] args)
         {
             int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             Predicate<int> predicate = x => x >= 5;
-            var allMatches = Array.FindAll(arr, delegate (int x)
-            {
-                return x >= 5;
-            });
+            //testDelegate<int> predicate1 = delegate (int x) { return x >= 5; };
+            //var allMatches = Array.FindAll(arr, predicate1);
 
             var list = new List<int>{ 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             list.FindAll(predicate);
 
             // can use custom declaration
-            MyLog myFunction = delegate (string msg)
+            MyCustomDelegateType myFunction = delegate (string msg)
             {
                 Console.WriteLine(msg);
             };
 
-            MyLog myFunction1 = msg => Console.WriteLine(msg);
+            MyCustomDelegateType myFunction1 = msg => Console.WriteLine(msg);
 
 
             // or generic
@@ -50,40 +49,56 @@ namespace Delegates
 
             var testClass = new TestClass();
 
-            testClass.LetMeKnowWhenDone("I'm done.", myFunction3);
-            testClass.LetMeKnowWhenDone("I'm done.", myFunction2);
+            TestClass.LetMeKnowWhenDone("I'm done.", myFunction3);
 
             //regular function
-            testClass.LetMeKnowWhenDone("I'm done.", delegate (string msg)
+            TestClass.LetMeKnowWhenDone("I'm done.", delegate (string msg)
             {
                 Console.WriteLine(msg);
             });
 
             //in-line lambda
-            testClass.LetMeKnowWhenDone("I'm done.", msg => Console.WriteLine(msg));
+            TestClass.LetMeKnowWhenDone("I'm done.", msg => Console.WriteLine(msg));
 
             TestClass.MyLoggerFunction myLoggerFunction = AnotherTest.FuncTest;
             testClass.LetMeKnowWhenDone2("hiiii", myLoggerFunction);
+            TestClass.LetMeKnowWhenDone1(delegate ()
+            {
+                Console.WriteLine("Done.");
+            });
+
+            var testClass1 = new TestClass();
+            testClass1.customDelegateObj = () => Console.WriteLine("done");
+            testClass1.Test();
+            TestClass.Test(delegate () { Console.WriteLine("Done."); });
+
         }
 
         public class TestClass
         {
             public delegate void MyLoggerFunction(string msg);
+            public delegate void MyCustomDelegateType ();
+            public MyCustomDelegateType customDelegateObj;
 
             public Action<string> MyGenericLogger { get; set; }
 
-            public void LetMeKnowWhenDone(string msg, Action<string> callbackFunction)
+            public static void LetMeKnowWhenDone(string msg, Action<string> callbackFunction)
             {
                 callbackFunction(msg);
             }
 
-            public void LetMeKnowWhenDone1(string msg)
+            public static void LetMeKnowWhenDone1(Action callback)
             {
-                MyGenericLogger(msg);
+                callback();
             }
             public void LetMeKnowWhenDone2(string msg, MyLoggerFunction myLoggerFunction)
             {
                 myLoggerFunction(msg);
+            }
+
+            public void Test()
+            {
+                customDelegateObj.Invoke();
             }
         }
 
