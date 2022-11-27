@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ihtizd/Svcr0yVn/te6FAtVj5K5bMxUOQ6z2rDqf1Xct9OZ0JtOAqekbhMHm0GrNrC6FLsUimK3kywEaHZdihQ==",
+  "success": true,
+  "projectFilePath": "D:\\CODE\\Short-Projects\\CSharpEvents\\CSharpEvents.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Oleaw Digital\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,14 @@
+D:\CODE\Short-Projects\CSharpEvents\bin\Debug\netcoreapp3.1\CSharpEvents.exe
+D:\CODE\Short-Projects\CSharpEvents\bin\Debug\netcoreapp3.1\CSharpEvents.deps.json
+D:\CODE\Short-Projects\CSharpEvents\bin\Debug\netcoreapp3.1\CSharpEvents.runtimeconfig.json
+D:\CODE\Short-Projects\CSharpEvents\bin\Debug\netcoreapp3.1\CSharpEvents.runtimeconfig.dev.json
+D:\CODE\Short-Projects\CSharpEvents\bin\Debug\netcoreapp3.1\CSharpEvents.dll
+D:\CODE\Short-Projects\CSharpEvents\bin\Debug\netcoreapp3.1\CSharpEvents.pdb
+D:\CODE\Short-Projects\CSharpEvents\obj\Debug\netcoreapp3.1\CSharpEvents.csproj.AssemblyReference.cache
+D:\CODE\Short-Projects\CSharpEvents\obj\Debug\netcoreapp3.1\CSharpEvents.GeneratedMSBuildEditorConfig.editorconfig
+D:\CODE\Short-Projects\CSharpEvents\obj\Debug\netcoreapp3.1\CSharpEvents.AssemblyInfoInputs.cache
+D:\CODE\Short-Projects\CSharpEvents\obj\Debug\netcoreapp3.1\CSharpEvents.AssemblyInfo.cs
+D:\CODE\Short-Projects\CSharpEvents\obj\Debug\netcoreapp3.1\CSharpEvents.csproj.CoreCompileInputs.cache
+D:\CODE\Short-Projects\CSharpEvents\obj\Debug\netcoreapp3.1\CSharpEvents.dll
+D:\CODE\Short-Projects\CSharpEvents\obj\Debug\netcoreapp3.1\CSharpEvents.pdb
+D:\CODE\Short-Projects\CSharpEvents\obj\Debug\netcoreapp3.1\CSharpEvents.genruntimeconfig.cache
