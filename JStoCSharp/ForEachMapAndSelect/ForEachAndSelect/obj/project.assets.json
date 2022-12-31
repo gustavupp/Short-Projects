@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CODE\\Short-Projects\\JStoCSharp\\ForEachAndSelect\\DelegatesTest.csproj",
+      "projectUniqueName": "D:\\CODE\\Short-Projects\\JStoCSharp\\ForEachMapAndSelect\\ForEachAndSelect\\DelegatesTest.csproj",
       "projectName": "DelegatesTest",
-      "projectPath": "D:\\CODE\\Short-Projects\\JStoCSharp\\ForEachAndSelect\\DelegatesTest.csproj",
+      "projectPath": "D:\\CODE\\Short-Projects\\JStoCSharp\\ForEachMapAndSelect\\ForEachAndSelect\\DelegatesTest.csproj",
       "packagesPath": "C:\\Users\\Oleaw Digital\\.nuget\\packages\\",
-      "outputPath": "D:\\CODE\\Short-Projects\\JStoCSharp\\ForEachAndSelect\\obj\\",
+      "outputPath": "D:\\CODE\\Short-Projects\\JStoCSharp\\ForEachMapAndSelect\\ForEachAndSelect\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Oleaw Digital\\AppData\\Roaming\\NuGet\\NuGet.Config",

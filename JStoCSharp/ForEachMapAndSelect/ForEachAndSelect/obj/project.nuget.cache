@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5Sgj/yQhq93THG8mV7bGEMHVgDMOUPiIY3B57L4RTiyIadJx0KpsQrZ1qssJy4iV9kagwFfojqzumHDVMUbHqw==",
+  "dgSpecHash": "FIe0qBJRIKiAPWagGbOW0z15kyWenZ8ux9zYi9qgMp1E2w3aMhvELj9wjag6kA9ub4+vvm//3jxroEDwmbOGzQ==",
   "success": true,
-  "projectFilePath": "D:\\CODE\\Short-Projects\\JStoCSharp\\ForEachAndSelect\\DelegatesTest.csproj",
+  "projectFilePath": "D:\\CODE\\Short-Projects\\JStoCSharp\\ForEachMapAndSelect\\ForEachAndSelect\\DelegatesTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Oleaw Digital\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
   ],
