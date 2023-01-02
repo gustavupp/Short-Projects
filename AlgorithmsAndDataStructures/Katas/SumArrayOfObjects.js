@@ -19,6 +19,7 @@ const arr = [
   { year: 2021, amount: 1 },
 ]
 
+//using Map
 let result = Array.from(
   arr.reduce(
     //use Map.set() and Map.get() to add curr.year and if acc.get(cur.year) exists in array, add cur.amount else add 0
@@ -28,4 +29,12 @@ let result = Array.from(
   ([year, amount]) => ({ year, amount })
 )
 
-console.log(result)
+//console.log(result)
+
+//alternative
+Object.entries(
+  arr.reduce((acc, { year, amount }) => {
+    acc[year] = (acc[year] || 0) + amount
+    return acc
+  }, {})
+).map(([y, a]) => ({ year: y, amount: a }))
