@@ -1,7 +1,6 @@
 function arrayDiff1(a, b) {
   let arr = []
   a.forEach((el, index) => {
-    console.log({ el, index, b })
     if (!b.includes(el)) {
       arr.push(el)
     }

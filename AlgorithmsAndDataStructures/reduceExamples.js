@@ -148,3 +148,7 @@ function groupBy(arr, key) {
 }
 
 const menuByCategory1 = groupBy(menuCategories, (x) => x.category)
+
+//Flatenning an array of arrays
+const arrayOfArrays = [1, 2, 3, [4, 5], [6, 7], [8, 9]]
+const flatArray = arrayOfArrays.reduce((acc, cur) => acc.concat(cur), [])

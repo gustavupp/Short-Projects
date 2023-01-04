@@ -34,7 +34,8 @@ console.log(intersection1(arr1, arr2));
 
 // solution with a for loop and indexOf
 function intersection2(arr1, arr2){ 
-    let newArr2 = []; for (let i = 0; i < arr1.length; i++){ 
+    let newArr2 = []; 
+    for (let i = 0; i < arr1.length; i++){ 
         if (arr2.indexOf(arr1[i]) !== -1 && newArr2.indexOf(arr1[i]) === -1){ 
             newArr2.push(arr1[i]); 
         } 
